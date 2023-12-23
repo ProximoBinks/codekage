@@ -6,27 +6,48 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Terminal UI</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .coding-box {
+      transition: transform 0.3s ease-in-out;
+    }
+    .coding-box:hover {
+      transform: scale(1.05);
+    }
+  </style>
 </head>
 
-<body style="background-color: #858585;">
-  <div class="flex items-center justify-center h-screen">
-    <aside class="bg-black text-white p-6 rounded-lg w-full max-w-lg font-mono">
-      <div class="flex justify-between items-center">
-        <div class="flex space-x-2 text-red-500">
-          <div class="w-3 h-3 rounded-full bg-red-500"></div>
-          <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
-          <div class="w-3 h-3 rounded-full bg-green-500"></div>
+<body class="bg-gray-100">
+  <main class="w-full min-h-screen flex flex-col justify-center items-center p-8">
+    <section class="w-full max-w-4xl mx-auto text-center p-6 space-y-4">
+      <h1 class="text-5xl font-bold text-gray-800">Turn your webpage</h1>
+      <h1 class="text-5xl font-bold text-gray-800">into a cool terminal.</h1>
+      <p class="text-xl text-gray-600">Here's a sample code snippet for you:</p>
+    </section>
+    <div class="flex items-center justify-center">
+      <aside class="coding-box bg-gray-900 text-white p-8 rounded-xl w-full max-w-2xl font-mono shadow-2xl">
+        <div class="flex justify-between items-center">
+          <div class="flex space-x-1.5">
+            <div class="w-3 h-3 rounded-full bg-red-500"></div>
+            <div class="w-3 h-3 rounded-full bg-yellow-400"></div>
+            <div class="w-3 h-3 rounded-full bg-green-500"></div>
+          </div>
+          <p class="text-sm text-gray-400">bash</p>
         </div>
-        <p class="text-sm">bash</p>
-      </div>
-      <div class="mt-4">
-        <p class="text-green-400">$ npm install next</p>
-        <p class="text-white">+ next@10.2.3</p>
-        <p class="text-white">added 1 package, and audited 2 packages in 3s</p>
-        <p class="text-green-400">$</p>
-      </div>
-    </aside>
-  </div>
+        <div class="mt-6">
+          <p class="text-green-400">$ npm install next</p>
+          <p class="text-gray-200">+ next@10.2.3</p>
+          <p class="text-gray-200">added 1 package, and audited 2 packages in 3s</p>
+          <p class="text-green-400">$</p>
+        </div>
+      </aside>
+    </div>
+    <section class="w-full max-w-4xl mx-auto text-center p-6 space-y-4 mt-8">
+      <p class="text-xl text-gray-600">Want to learn more?</p>
+      <button class="text-lg font-semibold bg-gray-800 text-white py-3 px-8 rounded-lg shadow-lg hover:bg-gray-700 hover:shadow-md transition-all">
+        Learn More
+      </button>
+    </section>
+  </main>
 </body>
 
 </html>
