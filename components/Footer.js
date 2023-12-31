@@ -1,17 +1,15 @@
-import styles from './Footer.module.css'
-
+// components/Footer.js
+import styles from '../styles/Footer.module.css'; // Import the CSS module
+s
 export default function Footer() {
   return (
-    <footer className={styles.footer}>
-      <div>
-        <p>Follow us on social media!</p>
-        {/* Icons or links to social media profiles */}
-      </div>
-      <img src="/logo-netlify.svg" alt="Netlify Logo" className={styles.logo} />
-      <div>
-        <p>Contact us: contact@example.com</p>
-        {/* Other contact information or quick links */}
+    <footer className={styles.footer}> {/* Use the styles object */}
+      <p>Follow CodeKage on Social Media:</p>
+      <div className={styles['social-links']}>
+        <a href="https://instagram.com">Instagram</a>
+        <a href="https://tiktok.com">TikTok</a>
+        <a href="https://youtube.com">YouTube</a>
       </div>
     </footer>
-  )
+  );
 }

@@ -1,0 +1,18 @@
+/* styles/Footer.module.css */
+.footer {
+    background-color: black;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+  }
+  
+  .social-links a {
+    color: orange;
+    text-decoration: none;
+    margin: 0 10px;
+  }
+  
+  .social-links a:hover {
+    color: darkorange;
+  }
+  

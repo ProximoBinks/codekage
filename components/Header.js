@@ -1,28 +1,19 @@
-export default function Header({ title }) {
+// components/Header.js
+import Link from 'next/link';
+import { useTheme } from '../context/ThemeContext';
+import styles from '../styles/Header.module.css'; // Import the CSS module
+
+export default function Header() {
+  const { toggleTheme } = useTheme();
+
   return (
-    <header className="header">
-      <h1 className="title">{title}</h1>
-      <nav>
-        <a href="/">Home</a>
-        <a href="/board">Board</a>
-        <a href="/timeline">Timeline</a>
+    <header className={styles.header}>
+      <nav className={styles.nav}> {/* Add a local class */}
+        <Link href="/">Home</Link> 
+        <Link href="/about">About</Link>
+        <Link href="/videos">Videos</Link>
       </nav>
-      <style jsx>{`
-        .header {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          padding: 1rem 2rem;
-        }
-        nav a {
-          margin-left: 20px;
-          text-decoration: none;
-          color: #0070f3;
-        }
-        nav a:hover {
-          text-decoration: underline;
-        }
-      `}</style>
+      <button onClick={toggleTheme}>Toggle Theme</button>
     </header>
   );
 }

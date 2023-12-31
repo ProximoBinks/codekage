@@ -1,13 +1,7 @@
-html, body {
-  padding: 0;
+/* styles/globals.css */
+body {
   margin: 0;
-  font-family: 'Arial', sans-serif;
-  background-color: #f0f0f0;
-  color: #333;
-}
-
-* {
-  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
 a {
@@ -15,23 +9,48 @@ a {
   text-decoration: none;
 }
 
-main {
-  padding: 2rem;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
+.light {
+  --bg-color: #fff;
+  --text-color: #000;
 }
 
-.container {
+.dark {
+  --bg-color: #333;
+  --text-color: #fff;
+}
+
+.layout {
+  background-color: var(--bg-color);
+  color: var(--text-color);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
 }
 
-.title {
-  color: #0070f3;
+.header {
+  padding: 1rem;
+  background: var(--bg-color);
+  color: var(--text-color);
+}
+
+.footer {
+  padding: 1rem;
+  background: var(--bg-color);
+  color: var(--text-color);
+  margin-top: auto;
+}
+
+/* styles/globals.css */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  /* other styles */
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Horizontally center-align content */
+  justify-content: center; /* Vertically center-align content */
+  flex-grow: 1; /* Allow content to expand to fill available space */
 }
