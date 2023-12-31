@@ -1,84 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tweet UI</title>
+    <title>Music Player</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
+
 <body>
-    <div class="flex items-center justify-center h-screen">
-        <div class="border w-[500px] bg-black rounded-xl shadow-md overflow-hidden md:max-w-3xl m-3">
-            <div class="md:flex">
-                <div class="md:flex-shrink-0">
-                    <span class="object-cover md:w-48 rounded-md bg-muted w-[192px] h-[192px]"></span>
+    <div class="w-full h-screen bg-gray-500 flex items-center justify-center">
+        <div class="w-96 h-auto bg-white shadow-lg rounded-lg overflow-hidden">
+            <div class="flex justify-between items-center bg-gray-100 px-4 py-2">
+                <h2 class="text-lg font-medium text-gray-900 ">Music Player</h2>
+                <div class="flex space-x-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="text-gray-900">
+                        <path d="m21 21-6-6m6 6v-4.8m0 4.8h-4.8"></path>
+                        <path d="M3 16.2V21m0 0h4.8M3 21l6-6"></path>
+                        <path d="M21 7.8V3m0 0h-4.8M21 3l-6 6"></path>
+                        <path d="M3 7.8V3m0 0h4.8M3 3l6 6"></path>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="text-gray-900">
+                        <rect x="2" y="6" width="20" height="8" rx="1"></rect>
+                        <path d="M17 14v7"></path>
+                        <path d="M7 14v7"></path>
+                        <path d="M17 3v3"></path>
+                        <path d="M7 3v3"></path>
+                        <path d="M10 14 2.3 6.3"></path>
+                        <path d="m14 6 7.7 7.7"></path>
+                        <path d="m8 6 8 8"></path>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="text-gray-900">
+                        <line x1="4" x2="20" y1="12" y2="12"></line>
+                        <line x1="4" x2="20" y1="6" y2="6"></line>
+                        <line x1="4" x2="20" y1="18" y2="18"></line>
+                    </svg>
                 </div>
-                <div class="p-8 w-full">
-                    <div class="flex items-center justify-between">
-                        <div class="flex items-center">
-                            <img
-                                alt="Profile picture"
-                                class="rounded-full"
-                                height="40"
-                                src="/logo.png"
-                                width="40"
-                                style="aspect-ratio:40/40;object-fit:cover"
-                            />
-                            <div class="ml-4">
-                                <div class="flex items-center">
-                                    <div class="tracking text-md text-white font-semibold">
-                                        CodeKage
-                                    </div>
-                                    <img src="verified.svg" alt="Verified account" class="ml-1 h-4 w-4">
-                                </div>
-                                <div class="text-sm" style="color: #9d9588;"> 
-                                    @CodeKageHQ
-                                </div>
-                            </div>
-                        </div>
-                        <img
-                            height="24"
-                            src="/x.svg"
-                            width="24"
-                            style="aspect-ratio:40/40;object-fit:cover"
-                        />
+            </div>
+            <div class="flex flex-col space-y-4 p-4">
+                <div class="flex items-center space-x-4">
+                    <img alt="Album Art" height="64" width="64" src="/logo.jpg"
+                        style="aspect-ratio:64/64;object-fit:cover" />
+                    <div class="flex-1 space-y-1">
+                        <h2 class="text-lg font-medium text-gray-900">Purgatory</h2>
+                        <p class="text-sm text-gray-500">Tim Henson</p>
                     </div>
-                    <p class="mt-4 text-white">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lobortis, urna eu blandit commodo, odio nisi posuere odio, ut ultricies.
-                    </p>
-                    <div class="flex flex-col mt-6">
-                        <div>
-                            <span style="color: #9d9588;">4:22 PM · Dec 27, 2023 · </span>
-                            <span style="color: white; font-weight: bold;">4.7M </span>
-                            <span style="color: #9d9588;">Views</span>
-                        </div>
-                        <br>
-                        <div class="flex justify-between space-x-4 text-gray-400">
-                            <div class="flex items-center">
-                                <img src="comment.svg" alt="Comment" class="h-6 w-6 text-blue-500">
-                                <span class="ml-1" style="color: #31a4f1;">241</span>
-                            </div>
-                            <div class="flex items-center">
-                                <img src="retweet.svg" alt="Retweet" class="h-6 w-6 text-green-500">
-                                <span class="ml-1" style="color: #4affc3;">487</span>
-                            </div>
-                            <div class="flex items-center">
-                                <img src="heart.svg" alt="Heart" class="h-6 w-6 text-red-500">
-                                <span class="ml-1" style="color: #fa2c8b;">566</span>
-                            </div>
-                            <div class="flex items-center">
-                                <img src="share.svg" alt="Share" class="h-6 w-6" style="fill: #31a4f1;">
-                                <span class="ml-1" style="color: #31a4f1;">234</span>
-                            </div>
-                            <div class="flex items-center">
-                                <img src="bookmark.svg" alt="Bookmark" class="h-6 w-6" style="fill: #9d9588;">
-                            </div>
-                        </div>
+                </div>
+                <span dir="ltr" data-orientation="horizontal" aria-disabled="false"
+                    class="relative flex w-full touch-none select-none items-center flex-1"
+                    style="--radix-slider-thumb-transform:translateX(-50%)">
+                    <span data-orientation="horizontal"
+                        class="relative h-2 w-full grow overflow-hidden rounded-full bg-secondary">
+                        <span data-orientation="horizontal" class="absolute h-full bg-primary"
+                            style="left:0%;right:100%"></span>
+                    </span>
+                    <span style="transform:var(--radix-slider-thumb-transform);position:absolute;left:calc(0% + 0px)">
+                        <span role="slider" aria-valuemin="0" aria-valuemax="100" aria-orientation="horizontal"
+                            data-orientation="horizontal" tabindex="0"
+                            class="block h-5 w-5 rounded-full border-2 border-primary bg-background ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
+                            style="" data-radix-collection-item="" aria-valuenow="0"></span>
+                    </span>
+                </span>
+                <div class="flex items-center justify-between">
+                    <button
+                        class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-10 w-10">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="text-gray-900">
+                            <path d="m12 19-7-7 7-7"></path>
+                            <path d="M19 12H5"></path>
+                        </svg>
+                    </button>
+                    <button
+                        class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 w-10 p-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="text-gray-900">
+                            <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                        </svg>
+                    </button>
+                    <button
+                        class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-10 w-10">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="text-gray-900">
+                            <path d="M5 12h14"></path>
+                            <path d="m12 5 7 7-7 7"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div class="p-4">
+                <h2 class="text-lg font-medium text-gray-900 mb-2">Playlist</h2>
+                <div class="space-y-2">
+                    <div class="flex items-center justify-between">
+                        <p class="text-sm text-gray-900">Playing God</p>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="text-gray-900">
+                            <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                        </svg>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <p class="text-sm text-gray-900">ABC (feat. Sophia Black)</p>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="text-gray-900">
+                            <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                        </svg>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <p class="text-sm text-gray-900">G.O.A.T.</p>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="text-gray-900">
+                            <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                        </svg>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </body>
-</html>
 
+</html>
