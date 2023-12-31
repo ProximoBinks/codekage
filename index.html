@@ -1,84 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tweet UI</title>
+    <title>Weather App</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
+
 <body>
-    <div class="flex items-center justify-center h-screen">
-        <div class="border w-[500px] bg-black rounded-xl shadow-md overflow-hidden md:max-w-3xl m-3">
-            <div class="md:flex">
-                <div class="md:flex-shrink-0">
-                    <span class="object-cover md:w-48 rounded-md bg-muted w-[192px] h-[192px]"></span>
+    <div class="flex flex-col h-screen bg-gradient-to-r from-blue-500 to-blue-700">
+        <div class="flex flex-col items-center p-6 space-y-4 w-500 mx-auto">
+            <h1 class="text-2xl font-semibold text-white">San Francisco</h1>
+            <p class="text-sm text-gray-200">Monday, 12 April</p>
+            <div class="flex flex-col items-center space-y-2">
+                <svg class=" h-20 w-20 text-gray-300" fill="none" height="24" stroke="currentColor"
+                    stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"></path>
+                </svg>
+                <p class="text-6xl font-bold text-white">72°</p>
+                <p class="text-xl text-gray-300">Partly Cloudy</p>
+            </div>
+        </div>
+        <div class="flex overflow-x-auto space-x-6 p-6 w-500 mx-auto">
+            <div class="flex flex-col items-center space-y-2">
+                <p class="text-sm font-medium text-white">4 PM</p>
+                <svg class=" h-10 w-10 text-gray-300" fill="none" height="24" stroke="currentColor"
+                    stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"></path>
+                </svg>
+                <p class="text-lg font-semibold text-white">70°</p>
+            </div>
+            <div class="flex flex-col items-center space-y-2">
+                <p class="text-sm font-medium text-white">5 PM</p>
+                <svg class=" h-10 w-10 text-yellow-300" fill="none" height="24" stroke="currentColor"
+                    stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="12" r="4"></circle>
+                    <path d="M12 2v2"></path>
+                    <path d="M12 20v2"></path>
+                    <path d="m4.93 4.93 1.41 1.41"></path>
+                    <path d="m17.66 17.66 1.41 1.41"></path>
+                    <path d="M2 12h2"></path>
+                    <path d="M20 12h2"></path>
+                    <path d="m6.34 17.66-1.41 1.41"></path>
+                    <path d="m19.07 4.93-1.41 1.41"></path>
+                </svg>
+                <p class="text-lg font-semibold text-white">68°</p>
+            </div>
+            <div class="flex flex-col items-center space-y-2">
+                <p class="text-sm font-medium text-white">6 PM</p>
+                <svg class=" h-10 w-10 text-gray-300" fill="none" height="24" stroke="currentColor"
+                    stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"></path>
+                </svg>
+                <p class="text-lg font-semibold text-white">65°</p>
+            </div>
+            <div class="flex flex-col items-center space-y-2">
+                <p class="text-sm font-medium text-white">7 PM</p>
+                <svg class=" h-10 w-10 text-yellow-300" fill="none" height="24" stroke="currentColor"
+                    stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="12" r="4"></circle>
+                    <path d="M12 2v2"></path>
+                    <path d="M12 20v2"></path>
+                    <path d="m4.93 4.93 1.41 1.41"></path>
+                    <path d="m17.66 17.66 1.41 1.41"></path>
+                    <path d="M2 12h2"></path>
+                    <path d="M20 12h2"></path>
+                    <path d="m6.34 17.66-1.41 1.41"></path>
+                    <path d="m19.07 4.93-1.41 1.41"></path>
+                </svg>
+                <p class="text-lg font-semibold text-white">63°</p>
+            </div>
+        </div>
+        <div class="flex-1 overflow-y-auto space-y-6 p-6 w-500 mx-auto">
+            <div class="flex justify-between items-center mb-8 mr-4">
+                <p class="text-lg font-medium text-white">Tuesday</p>
+                <div class="flex items-center space-x-4">
+                    <svg class=" h-6 w-6 text-gray-300" fill="none" height="24" stroke="currentColor"
+                        stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"></path>
+                    </svg>
+                    <p class="text-lg font-semibold text-white">73° / 60°</p>
                 </div>
-                <div class="p-8 w-full">
-                    <div class="flex items-center justify-between">
-                        <div class="flex items-center">
-                            <img
-                                alt="Profile picture"
-                                class="rounded-full"
-                                height="40"
-                                src="/logo.png"
-                                width="40"
-                                style="aspect-ratio:40/40;object-fit:cover"
-                            />
-                            <div class="ml-4">
-                                <div class="flex items-center">
-                                    <div class="tracking text-md text-white font-semibold">
-                                        CodeKage
-                                    </div>
-                                    <img src="verified.svg" alt="Verified account" class="ml-1 h-4 w-4">
-                                </div>
-                                <div class="text-sm" style="color: #9d9588;"> 
-                                    @CodeKageHQ
-                                </div>
-                            </div>
-                        </div>
-                        <img
-                            height="24"
-                            src="/x.svg"
-                            width="24"
-                            style="aspect-ratio:40/40;object-fit:cover"
-                        />
-                    </div>
-                    <p class="mt-4 text-white">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lobortis, urna eu blandit commodo, odio nisi posuere odio, ut ultricies.
-                    </p>
-                    <div class="flex flex-col mt-6">
-                        <div>
-                            <span style="color: #9d9588;">4:22 PM · Dec 27, 2023 · </span>
-                            <span style="color: white; font-weight: bold;">4.7M </span>
-                            <span style="color: #9d9588;">Views</span>
-                        </div>
-                        <br>
-                        <div class="flex justify-between space-x-4 text-gray-400">
-                            <div class="flex items-center">
-                                <img src="comment.svg" alt="Comment" class="h-6 w-6 text-blue-500">
-                                <span class="ml-1" style="color: #31a4f1;">241</span>
-                            </div>
-                            <div class="flex items-center">
-                                <img src="retweet.svg" alt="Retweet" class="h-6 w-6 text-green-500">
-                                <span class="ml-1" style="color: #4affc3;">487</span>
-                            </div>
-                            <div class="flex items-center">
-                                <img src="heart.svg" alt="Heart" class="h-6 w-6 text-red-500">
-                                <span class="ml-1" style="color: #fa2c8b;">566</span>
-                            </div>
-                            <div class="flex items-center">
-                                <img src="share.svg" alt="Share" class="h-6 w-6" style="fill: #31a4f1;">
-                                <span class="ml-1" style="color: #31a4f1;">234</span>
-                            </div>
-                            <div class="flex items-center">
-                                <img src="bookmark.svg" alt="Bookmark" class="h-6 w-6" style="fill: #9d9588;">
-                            </div>
-                        </div>
-                    </div>
+            </div>
+            <div class="flex justify-between items-center mb-8 mr-4">
+                <p class="text-lg font-medium text-white pr-4">Wednesday</p>
+                <div class="flex items-center space-x-4">
+                    <svg class=" h-6 w-6 text-yellow-300" fill="none" height="24" stroke="currentColor"
+                        stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="12" cy="12" r="4"></circle>
+                        <path d="M12 2v2"></path>
+                        <path d="M12 20v2"></path>
+                        <path d="m4.93 4.93 1.41 1.41"></path>
+                        <path d="m17.66 17.66 1.41 1.41"></path>
+                        <path d="M2 12h2"></path>
+                        <path d="M20 12h2"></path>
+                        <path d="m6.34 17.66-1.41 1.41"></path>
+                        <path d="m19.07 4.93-1.41 1.41"></path>
+                    </svg>
+                    <p class="text-lg font-semibold text-white">76° / 62°</p>
+                </div>
+            </div>
+            <div class="flex justify-between items-center mb-8 mr-4">
+                <p class="text-lg font-medium text-white">Thursday</p>
+                <div class="flex items-center space-x-4">
+                    <svg class=" h-6 w-6 text-gray-300" fill="none" height="24" stroke="currentColor"
+                        stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"></path>
+                    </svg>
+                    <p class="text-lg font-semibold text-white">70° / 57°</p>
+                </div>
+            </div>
+            <div class="flex justify-between items-center mb-8 mr-4">
+                <p class="text-lg font-medium text-white">Friday</p>
+                <div class="flex items-center space-x-4">
+                    <svg class=" h-6 w-6 text-gray-300" fill="none" height="24" stroke="currentColor"
+                        stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"></path>
+                    </svg>
+                    <p class="text-lg font-semibold text-white">70° / 57°</p>
+                </div>
+            </div>
+            <div class="flex justify-between items-center mb-8 mr-4">
+                <p class="text-lg font-medium text-white">Saturday</p>
+                <div class="flex items-center space-x-4">
+                    <svg class=" h-6 w-6 text-yellow-300" fill="none" height="24" stroke="currentColor"
+                        stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="12" cy="12" r="4"></circle>
+                        <path d="M12 2v2"></path>
+                        <path d="M12 20v2"></path>
+                        <path d="m4.93 4.93 1.41 1.41"></path>
+                        <path d="m17.66 17.66 1.41 1.41"></path>
+                        <path d="M2 12h2"></path>
+                        <path d="M20 12h2"></path>
+                        <path d="m6.34 17.66-1.41 1.41"></path>
+                        <path d="m19.07 4.93-1.41 1.41"></path>
+                    </svg>
+                    <p class="text-lg font-semibold text-white">76° / 62°</p>
+                </div>
+            </div>
+            <div class="flex justify-between items-center mb-8 mr-4">
+                <p class="text-lg font-medium text-white">Sunday</p>
+                <div class="flex items-center space-x-4">
+                    <svg class=" h-6 w-6 text-gray-300" fill="none" height="24" stroke="currentColor"
+                        stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"></path>
+                    </svg>
+                    <p class="text-lg font-semibold text-white">70° / 57°</p>
                 </div>
             </div>
         </div>
     </div>
 </body>
-</html>
 
+</html>
