@@ -1,57 +1,71 @@
 #include <iostream>
 using namespace std;
 
-// Node structure for a single linked list
-struct Node{
-    int data; // Integer data held by the node
-    Node * next; // Pointer to the next node in the list
-    // Constructor initializes the node with given data and sets next to nullptr
+struct Node {
+    int data;
+    Node *next;
     Node(int d) : data(d), next(nullptr) {}
 };
 
-// LinkedList class defines a singly linked list
-class LinkedList{
+class LinkedList {
 public:
-    Node* head; // Pointer to the first node in the list
-
-    // Constructor initializes an empty linked list with head pointing to nullptr
+    Node *head;
     LinkedList() : head(nullptr) {}
 
-    // Function to add a new node with given data at the front of the list
     void addFront(int data) {
-        Node* newNode = new Node(data); // Create a new node with given data
-        newNode->next = head; // New node points to the current head
-        head = newNode; // New node becomes the new head
+        Node *newNode = new Node(data);
+        newNode->next = head;
+        head = newNode;
     }
 
-    // Function to display the contents of the list
-    void display() {
-        Node* current = head; // Start from the head of the list
-        while (current != nullptr) { // Traverse until the end of the list
-            cout << current->data << " -> "; // Print the data of the current node
-            current = current->next; // Move to the next node
+    // Function to delete a node with a specific value
+    void deleteNode(int value) {
+        Node *temp = head, *prev = nullptr;
+        // If head node itself holds the key to be deleted
+        if (temp != nullptr && temp->data == value) {
+            head = temp->next; // Changed head
+            delete temp;       // free old head
+            return;
         }
-        cout << "NULL" << endl; // Indicate the end of the list
+        // Search for the key to be deleted
+        while (temp != nullptr && temp->data != value) {
+            prev = temp;
+            temp = temp->next;
+        }
+        // If key was not present in linked list
+        if (temp == nullptr) return;
+        // Unlink the node from linked list
+        prev->next = temp->next;
+        delete temp; // Free memory
     }
 
-    // Destructor to free the memory used by the list
+    void display() {
+        Node *current = head;
+        while (current != nullptr) {
+            cout << current->data << " -> ";
+            current = current->next;
+        }
+        cout << "NULL" << endl;
+    }
+
     ~LinkedList() {
-        while (head != nullptr) { // Traverse the list
-            Node* temp = head; // Hold the current node
-            head = head->next; // Move the head to the next node
-            delete temp; // Delete the old head node
+        while (head != nullptr) {
+            Node *temp = head;
+            head = head->next;
+            delete temp;
         }
     }
 };
 
 int main() {
-    LinkedList list; // Create a new linked list
-    list.addFront(3); // Add elements to the list
+    LinkedList list;
+    list.addFront(3);
     list.addFront(2);
     list.addFront(1);
-
-    cout << "Linked List: ";
-    list.display(); // Display the contents of the list
-
-    return 0; // End of the program
+    cout << "Linked List before deletion: ";
+    list.display();
+    list.deleteNode(2); // Delete node with value 2
+    cout << "Linked List after deletion: ";
+    list.display();
+    return 0;
 }
