@@ -1,6 +1,3 @@
-// I know it says "Pure CSS", but I only use JS for some novelty features. It is still completely drawn and animated with CSS! If you feel your experience will be more pure without JS, feel free to remove it! Just know that you are missing out on the fun.
-
-// Not a class, but it's her name, so of course it's going to be capitalized!
 const Margo = document.querySelector('.Margo');
 
 const poop = {
@@ -42,7 +39,8 @@ const poop = {
           hitType: 'event',
           eventCategory: 'button',
           eventAction: 'click',
-          eventValue: poop.cleaned });
+          eventValue: poop.cleaned
+        });
 
       }
 
@@ -134,12 +132,14 @@ const poop = {
           } else {
             poop.isPlayerThought();
             message = `"...i've cleaned ${poop.cleaned} poops..."`;
-          }}
+          }
+      }
 
 
       poop.scoreDisplay.innerHTML = message;
     }
-  } };
+  }
+};
 
 
 setInterval(poop.show, 4000);
@@ -147,13 +147,12 @@ setInterval(poop.show, 4000);
 const buttons = {
   a: document.querySelector('.button--a'),
   b: document.querySelector('.button--b'),
-  c: document.querySelector('.button--c') };
+  c: document.querySelector('.button--c')
+};
 
 
 
 const init = () => {
-  // maybe there will be more functionality later,
-  // in the meantime, let's just do this
   buttons.a.addEventListener('click', poop.clean);
   buttons.b.addEventListener('click', poop.clean);
   buttons.c.addEventListener('click', poop.clean);
