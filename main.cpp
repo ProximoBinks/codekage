@@ -1,76 +1,70 @@
 #include <iostream>
 using namespace std;
 
-// Node structure for a Binary Tree
 struct Node {
-    int data; // Integer data held by the node
-    Node* left; // Pointer to the left child node
-    Node* right; // Pointer to the right child node
+    int data;
+    Node* left;
+    Node* right;
 
-    // Constructor initializes the node with given data and null child pointers
     Node(int d) : data(d), left(nullptr), right(nullptr) {}
 };
 
-// BinaryTree class defines a binary search tree
 class BinaryTree {
 public:
-    Node* root; // Pointer to the root node of the tree
+    Node* root;
 
-    // Constructor initializes an empty tree with root pointing to nullptr
     BinaryTree() : root(nullptr) {}
 
-    // Public function to insert data into the tree
+    // Function to insert data into the tree
     void insert(int data) {
         root = insertRec(root, data);
     }
 
-    // Public function for inorder traversal of the tree
+    // Function to delete a node with a specific value from the tree
+    Node* deleteNode(Node* root, int data) {
+        if (root == nullptr) return root; // Base case: tree is empty
+        // Recursively find the node to delete
+        if (data < root->data)
+            root->left = deleteNode(root->left, data);
+        else if (data > root->data)
+            root->right = deleteNode(root->right, data);
+        else {
+            // Node with only one child or no child
+            if (root->left == nullptr) {
+                Node* temp = root->right;
+                delete root;
+                return temp;
+            } else if (root->right == nullptr) {
+                Node* temp = root->left;
+                delete root;
+                return temp;
+            }
+            // Node with two children: Get the inorder successor (smallest in the right subtree)
+            Node* temp = minValueNode(root->right);
+            root->data = temp->data; // Copy the inorder successor's content to this node
+            root->right = deleteNode(root->right, temp->data); // Delete the inorder successor
+        }
+        return root;
+    }
+
     void inorder() {
         inorderRec(root);
     }
 
-    // Destructor to free the memory used by the tree
     ~BinaryTree() {
         destroyTree(root);
     }
 
 private:
-    // Private recursive function to insert data at the appropriate position in the tree
-    Node* insertRec(Node* root, int data) {
-        if(root == nullptr) { // If the tree/subtree is empty, create a new node
-            return new Node(data);
-        }
-        // Recursively insert into the left or right subtree based on the data's value
-        if (data < root->data) {
-            root->left = insertRec(root->left, data);
-        } else {
-            root->right = insertRec(root->right, data);
-        }
-        return root;
-    }
-
-    // Private recursive function for inorder traversal of the tree
-    void inorderRec(Node* root) {
-        if (root != nullptr) { // If the current node is not null
-            inorderRec(root->left); // Recursively visit the left subtree
-            cout << root->data << " "; // Visit the current node
-            inorderRec(root->right); // Recursively visit the right subtree
-        }
-    }
-
-    // Private function to destroy the tree and free memory
-    void destroyTree(Node* node) {
-        if (node != nullptr) { // If the current node is not null
-            destroyTree(node->left); // Recursively destroy the left subtree
-            destroyTree(node->right); // Recursively destroy the right subtree
-            delete node; // Delete the current node
-        }
-    }
+    // Helper functions for insert, delete, and inorder traversal
+    Node* insertRec(Node* root, int data);
+    void inorderRec(Node* root);
+    void destroyTree(Node* node);
+    Node* minValueNode(Node* node);
 };
 
 int main() {
-    BinaryTree tree; // Create a new binary tree
-    // Insert elements into the tree
+    BinaryTree tree;
     tree.insert(5);
     tree.insert(3);
     tree.insert(7);
@@ -79,9 +73,14 @@ int main() {
     tree.insert(6);
     tree.insert(8);
 
-    cout << "Inorder Traversal: ";
-    tree.inorder(); // Perform an inorder traversal and print the elements
+    cout << "Inorder Traversal before deletion: ";
+    tree.inorder();
     cout << endl;
 
-    return 0; // End of the program
+    tree.deleteNode(tree.root, 3); // Delete node with value 3
+    cout << "Inorder Traversal after deletion: ";
+    tree.inorder();
+    cout << endl;
+
+    return 0;
 }
