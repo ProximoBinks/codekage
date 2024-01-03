@@ -15,21 +15,17 @@ public:
 
     BinaryTree() : root(nullptr) {}
 
-    // Function to insert data into the tree
     void insert(int data) {
         root = insertRec(root, data);
     }
 
-    // Function to delete a node with a specific value from the tree
     Node* deleteNode(Node* root, int data) {
-        if (root == nullptr) return root; // Base case: tree is empty
-        // Recursively find the node to delete
+        if (root == nullptr) return root;
         if (data < root->data)
             root->left = deleteNode(root->left, data);
         else if (data > root->data)
             root->right = deleteNode(root->right, data);
         else {
-            // Node with only one child or no child
             if (root->left == nullptr) {
                 Node* temp = root->right;
                 delete root;
@@ -39,10 +35,9 @@ public:
                 delete root;
                 return temp;
             }
-            // Node with two children: Get the inorder successor (smallest in the right subtree)
             Node* temp = minValueNode(root->right);
-            root->data = temp->data; // Copy the inorder successor's content to this node
-            root->right = deleteNode(root->right, temp->data); // Delete the inorder successor
+            root->data = temp->data;
+            root->right = deleteNode(root->right, temp->data);
         }
         return root;
     }
@@ -56,11 +51,41 @@ public:
     }
 
 private:
-    // Helper functions for insert, delete, and inorder traversal
-    Node* insertRec(Node* root, int data);
-    void inorderRec(Node* root);
-    void destroyTree(Node* node);
-    Node* minValueNode(Node* node);
+    Node* insertRec(Node* root, int data) {
+        if (root == nullptr) {
+            return new Node(data);
+        }
+        if (data < root->data) {
+            root->left = insertRec(root->left, data);
+        } else {
+            root->right = insertRec(root->right, data);
+        }
+        return root;
+    }
+
+    void inorderRec(Node* root) {
+        if (root != nullptr) {
+            inorderRec(root->left);
+            cout << root->data << " ";
+            inorderRec(root->right);
+        }
+    }
+
+    void destroyTree(Node* node) {
+        if (node != nullptr) {
+            destroyTree(node->left);
+            destroyTree(node->right);
+            delete node;
+        }
+    }
+
+    Node* minValueNode(Node* node) {
+        Node* current = node;
+        while (current && current->left != nullptr) {
+            current = current->left;
+        }
+        return current;
+    }
 };
 
 int main() {
