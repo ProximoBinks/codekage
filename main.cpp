@@ -1,57 +1,56 @@
 #include <iostream>
-#include <vector>
 #include <list>
-
+#include <vector>
 using namespace std;
 
-class Graph{
-    int numVertices; // Number of vertices in the graph
-    vector<list<int>> adjLists; // Adjacency lists for each vertex
-    void DFSUtil(int v, vector<bool>& visited); // Utility function for DFS
+class Graph {
+private:
+    int V; // Number of vertices
+    vector<list<int>> adj; // Adjacency lists
 
-public:
-    // Constructor initializing the graph with a given number of vertices
-    Graph(int vertices) : numVertices(vertices), adjLists(vertices) {}
+    // Utility function for Depth First Search (DFS)
+    void DFSUtil(int v, vector<bool> &visited) {
+        // Mark the current node as visited and print it
+        visited[v] = true;
+        cout << v << " ";
 
-    // Function to add an edge between two vertices
-    void addEdge(int src, int dest) {
-        adjLists[src].push_back(dest);
-        adjLists[dest].push_back(src);
-    }
-
-    // Function to perform DFS starting from vertex v
-    void DFS(int v);
-};
-
-// Utility function for performing DFS recursively
-void Graph::DFSUtil(int v, vector<bool>& visited) {
-    visited[v] = true; // Mark the current node as visited
-    cout << v << " "; // Print the current node
-
-    // Recur for all the vertices adjacent to this vertex
-    for (int adj : adjLists[v]) {
-        if (!visited[adj]) {
-            DFSUtil(adj, visited); // Recursive call if not visited
+        // Recur for all the vertices adjacent to this vertex
+        for (int adjVertex : adj[v]) {
+            if (!visited[adjVertex]) {
+                DFSUtil(adjVertex, visited); // Recursively call DFS on adjacent vertices
+            }
         }
     }
-}
 
-// DFS traversal of the vertices reachable from v
-void Graph::DFS(int v) {
-    vector<bool> visited(numVertices, false); // Initialize all vertices as not visited
-    DFSUtil(v, visited); // Call the recursive helper function to print DFS traversal
-}
+public:
+    Graph(int V) { // Constructor
+        this->V = V; // Initialize the number of vertices
+        adj.resize(V); // Resize the adjacency list vector to accommodate V vertices
+    }
 
+    void addEdge(int v, int w) { // Function to add an edge to the graph
+        adj[v].push_back(w); // Add w to v’s list (undirected graph)
+    }
+
+    void DFS(int v) { // Depth First Search traversal starting from vertex v
+        vector<bool> visited(V, false); // Create a boolean vector to mark visited vertices
+        DFSUtil(v, visited); // Call the recursive DFS utility function
+    }
+};
+
+// Main function
 int main() {
-    Graph g(5); // Create a graph with 5 vertices
-    // Add edges to the graph
+    // Create a graph given in the above diagram
+    Graph g(4); // Create a graph with 4 vertices numbered from 0 to 3
     g.addEdge(0, 1);
     g.addEdge(0, 2);
-    g.addEdge(1, 3);
-    g.addEdge(1, 4);
+    g.addEdge(1, 2);
+    g.addEdge(2, 0);
+    g.addEdge(2, 3);
+    g.addEdge(3, 3);
 
-    cout << "Depth First Traversal (starting from vertex 0) : \n";
-    g.DFS(0); // Perform DFS starting from vertex 0
+    cout << "Depth First Traversal starting from vertex 2:\n";
+    g.DFS(2); // Perform DFS traversal starting from vertex 2
 
-    return 0; // End of the program
+    return 0; // Exit the program
 }
