@@ -51,6 +51,7 @@ int main() {
 
     cout << "Depth First Traversal starting from vertex 2:\n";
     g.DFS(2); // Perform DFS traversal starting from vertex 2
-
+    cout << endl << "Depth First Traversal starting from vertex 1:\n";
+    g.DFS(1); // Perform DFS traversal starting from vertex 2
     return 0; // Exit the program
 }
