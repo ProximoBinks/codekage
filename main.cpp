@@ -58,8 +58,13 @@ int main() {
     g.addEdge(2, 3);
     g.addEdge(3, 3);
 
+    cout << "Breadth First Traversal starting from vertex 3:\n";
+    g.BFS(3); // Perform BFS traversal starting from vertex 2
+    cout << endl;
     cout << "Breadth First Traversal starting from vertex 2:\n";
     g.BFS(2); // Perform BFS traversal starting from vertex 2
-
+    cout << endl;
+    cout << "Breadth First Traversal starting from vertex 1:\n";
+    g.BFS(1); // Perform BFS traversal starting from vertex 1
     return 0; // Exit the program
 }
