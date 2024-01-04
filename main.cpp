@@ -37,40 +37,66 @@ private:
         }
     }
 
+    // Helper function for pre-order traversal of the tree
+    void preOrder(Node* node) {
+        if (node != nullptr) {
+            cout << node->data << " ";  // Visit the root
+            preOrder(node->left);      // Traverse the left subtree
+            preOrder(node->right);     // Traverse the right subtree
+        }
+    }
+
+    // Helper function for post-order traversal of the tree
+    void postOrder(Node* node) {
+        if (node != nullptr) {
+            postOrder(node->left);     // Traverse the left subtree
+            postOrder(node->right);    // Traverse the right subtree
+            cout << node->data << " "; // Visit the root
+        }
+    }
+
 public:
-    // Constructor
     BinaryTree() : root(nullptr) {}
 
-    // Function to insert data
     void insert(int data) {
         root = insert(root, data);  // Call the private insert method
     }
 
-    // Function for in-order traversal
     void inOrderTraversal() {
-        inOrder(root);  // Call the private inOrder method to perform in-order traversal
-        cout << endl;  // Print a newline to separate the output
+        inOrder(root);
+        cout << endl;
     }
 
-    // Destructor to deallocate memory
+    // Function for pre-order traversal
+    void preOrderTraversal() {
+        preOrder(root);
+        cout << endl;
+    }
+
+    // Function for post-order traversal
+    void postOrderTraversal() {
+        postOrder(root);
+        cout << endl;
+    }
+
     ~BinaryTree() {
-        deleteTree(root);  // Call the private deleteTree method
+        deleteTree(root);
     }
 
     // Helper function for destructor to deallocate memory
     void deleteTree(Node* node) {
         if (node != nullptr) {
-            deleteTree(node->left);   // Recursively delete the left subtree
-            deleteTree(node->right);  // Recursively delete the right subtree
-            delete node;  // Delete the current node
+            deleteTree(node->left);
+            deleteTree(node->right);
+            delete node;
         }
     }
 };
 
 // Main Function
 int main() {
-    BinaryTree tree;  // Create a binary tree object
-    tree.insert(5);   // Insert data into the tree
+    BinaryTree tree;
+    tree.insert(5);
     tree.insert(3);
     tree.insert(7);
     tree.insert(2);
@@ -79,7 +105,13 @@ int main() {
     tree.insert(8);
 
     cout << "In-order Traversal: ";
-    tree.inOrderTraversal();  // Perform in-order traversal and print the result
+    tree.inOrderTraversal();
 
-    return 0;  // Exit the program
+    cout << "Pre-order Traversal: ";
+    tree.preOrderTraversal();
+
+    cout << "Post-order Traversal: ";
+    tree.postOrderTraversal();
+
+    return 0;
 }
