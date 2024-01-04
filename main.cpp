@@ -1,38 +1,41 @@
 #include <iostream>
-#include <vector>
 #include <list>
+#include <vector>
 using namespace std;
 
-// Graph class defines a graph using an adjacency list
 class Graph {
-    int numVertices; // Number of vertices in the graph
-    vector<list<int>> adjLists; // Vector of lists to represent the adjacency list
+private:
+    int V; // No. of vertices
+    vector<list<int>> adj; // Adjacency lists
 
 public:
-    // Constructor initializes a graph with a given number of vertices
-    Graph(int vertices) : numVertices(vertices), adjLists(vertices) {}
-
-    // Function to add an edge between two vertices (src and dest)
-    void addEdge(int src, int dest) {
-        adjLists[src].push_back(dest); // Add dest to the list of src's adjacent vertices
-        adjLists[dest].push_back(src); // Add src to the list of dest's adjacent vertices (for an undirected graph)
+    // Constructor
+    Graph(int V) {
+        this->V = V; // Initialize the number of vertices
+        adj.resize(V); // Resize the adjacency list vector to accommodate V vertices
     }
 
-    // Function to print the adjacency list representation of the graph
+    // Function to add an edge to the graph
+    void addEdge(int v, int w) {
+        adj[v].push_back(w); // Add w to v’s list.
+        adj[w].push_back(v); // Since the graph is undirected, add v to w's list as well.
+    }
+
+    // Print the adjacency list representation of the graph
     void printGraph() {
-        for (int i = 0; i < numVertices; i++) { // Iterate through all vertices
-            cout << "Adjacency list of vertex " << i << ": ";
-            for (auto v : adjLists[i]) { // Iterate through the list of adjacent vertices
-                cout << v << " "; // Print the adjacent vertex
-            }
-            cout << endl;
+        for (int v = 0; v < V; ++v) { // Iterate through all vertices
+            cout << "\n Adjacency list of vertex " << v << "\n head ";
+            for (auto x : adj[v]) // Iterate through the adjacency list of the current vertex
+                cout << "-> " << x; // Print each adjacent vertex
+            printf("\n"); // Move to the next line for the next vertex
         }
     }
 };
 
+// Main function
 int main() {
-    Graph g(5); // Create a graph with 5 vertices
-    // Add edges to the graph
+    // Create a graph given in the above diagram
+    Graph g(5); // Create a graph with 5 vertices numbered from 0 to 4
     g.addEdge(0, 1);
     g.addEdge(0, 4);
     g.addEdge(1, 2);
@@ -41,7 +44,8 @@ int main() {
     g.addEdge(2, 3);
     g.addEdge(3, 4);
 
-    g.printGraph(); // Print the adjacency list representation of the graph
+    // Print the adjacency list representation of the graph
+    g.printGraph();
 
-    return 0; // End of the program
+    return 0; // Exit the program
 }
