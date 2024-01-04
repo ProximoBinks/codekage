@@ -1,72 +1,65 @@
 #include <iostream>
-#include <vector>
 #include <list>
+#include <vector>
 #include <queue>
-
 using namespace std;
 
 class Graph {
-    int numVertices; // Number of vertices in the graph
-    vector<list<int>> adjLists; // Adjacency lists for each vertex
+private:
+    int V; // Number of vertices
+    vector<list<int>> adj; // Adjacency lists
 
 public:
-    // Constructor initializing the graph with a given number of vertices
-    Graph(int vertices) :numVertices(vertices), adjLists(vertices) {}
-    
-    // Function to add an edge between two vertices
-    void addEdge(int src, int dest) {
-        adjLists[src].push_back(dest);
-        adjLists[dest].push_back(src);
+    Graph(int V) { // Constructor
+        this->V = V; // Initialise the number of vertices
+        adj.resize(V); // Resize the adjacency list vector to accommodate V vertices
     }
 
-    // Function to delete an edge between two vertices
-    void deleteEdge(int src, int dest) {
-        adjLists[src].remove(dest); // Remove dest from src's adjacency list
-        adjLists[dest].remove(src); // Remove src from dest's adjacency list
+    void addEdge(int v, int w) { // Function to add an edge to the graph
+        adj[v].push_back(w); // Add w to v’s list (undirected graph)
     }
 
-    // Function to perform BFS starting from vertex s
-    void BFS(int s) {
-        vector<bool> visited(numVertices, false); // Keep track of visited vertices
-        queue<int> queue; // Queue to manage the order of visiting vertices
+    void BFS(int s) { // Breadth First Search traversal starting from a given source s
+        // Mark all the vertices as not visited
+        vector<bool> visited(V, false);
+        
+        // Create a queue for BFS
+        queue<int> queue;
 
-        visited[s] = true; // Mark the starting vertex as visited
-        queue.push(s); // Enqueue the starting vertex
+        // Mark the current node as visited and enqueue it
+        visited[s] = true;
+        queue.push(s);
 
-        // Continue until the queue is empty
-        while (!queue.empty()) {
-            s = queue.front(); // Get the front vertex in the queue
-            cout << s << " "; // Print the current vertex
-            queue.pop(); // Dequeue
+        while(!queue.empty()) {
+            // Dequeue a vertex from the queue and print it
+            s = queue.front();
+            cout << s << " ";
+            queue.pop();
 
-            // Go through the adjacency list of the current vertex
-            for (auto adj : adjLists[s]) {
-                // If an adjacent vertex hasn't been visited
-                if (!visited[adj]) {
-                    visited[adj] = true; // Mark it as visited
-                    queue.push(adj); // Enqueue it
+            // Get all adjacent vertices of the dequeued vertex s
+            // If an adjacent vertex has not been visited, then mark it visited and enqueue it
+            for (int adjVertex : adj[s]) {
+                if (!visited[adjVertex]) {
+                    visited[adjVertex] = true;
+                    queue.push(adjVertex);
                 }
             }
         }
     }
 };
 
-int main() { 
-    Graph g(5); // Create a graph with 5 vertices
-    // Add edges to the graph
+// Main function
+int main() {
+    Graph g(4); // Create a graph with 4 vertices numbered from 0 to 3
     g.addEdge(0, 1);
     g.addEdge(0, 2);
-    g.addEdge(1, 3);
-    g.addEdge(1, 4);
+    g.addEdge(1, 2);
+    g.addEdge(2, 0);
+    g.addEdge(2, 3);
+    g.addEdge(3, 3);
 
-    cout << "Breath First Traversal (starting from vertex 0): \n";
-    g.BFS(0);
+    cout << "Breadth First Traversal starting from vertex 2:\n";
+    g.BFS(2); // Perform BFS traversal starting from vertex 2
 
-    cout << "\nDeleting edge (1, 4)\n";
-    g.deleteEdge(1, 4); // Delete edge between vertex 1 and 4
-
-    cout << "Breath First Traversal after deleting edge (starting from vertex 0): \n";
-    g.BFS(0);
-
-    return 0; // End of the program
+    return 0; // Exit the program
 }
