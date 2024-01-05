@@ -9,15 +9,22 @@ private:
     vector<list<int>> adj; // Adjacency lists
 
     // Utility function for Depth First Search (DFS)
+    // Overall Time Complexity: O(|V| + |E|) for a call on all vertices
     void DFSUtil(int v, vector<bool> &visited) {
         // Mark the current node as visited and print it
+        // Time Complexity: O(1)
         visited[v] = true;
         cout << v << " ";
 
         // Recur for all the vertices adjacent to this vertex
+        // Time Complexity: Sum of the degrees of all vertices = O(|E|)
         for (int adjVertex : adj[v]) {
             if (!visited[adjVertex]) {
                 DFSUtil(adjVertex, visited); // Recursively call DFS on adjacent vertices
+                // Each vertex is visited exactly once due to the visited check, so the total
+                // complexity over all calls to DFSUtil is O(|V|) for the vertices.
+                // Each edge is explored in the adjacency lists of its vertices, so total
+                // complexity over all calls to DFSUtil is O(|E|) for the edges.
             }
         }
     }
@@ -28,13 +35,22 @@ public:
         adj.resize(V); // Resize the adjacency list vector to accommodate V vertices
     }
 
-    void addEdge(int v, int w) { // Function to add an edge to the graph
+    // Function to add an edge to the graph
+    // Time Complexity: O(1) for each edge
+    void addEdge(int v, int w) { 
         adj[v].push_back(w); // Add w to v’s list (undirected graph)
     }
 
-    void DFS(int v) { // Depth First Search traversal starting from vertex v
-        vector<bool> visited(V, false); // Create a boolean vector to mark visited vertices
-        DFSUtil(v, visited); // Call the recursive DFS utility function
+    // Depth First Search traversal starting from vertex v
+    // Overall Time Complexity: O(|V| + |E|)
+    void DFS(int v) { 
+        // Create a boolean vector to mark visited vertices
+        // Time Complexity: O(|V|)
+        vector<bool> visited(V, false);
+        
+        // Call the recursive DFS utility function
+        // Time Complexity: O(|V| + |E|) for a complete traversal
+        DFSUtil(v, visited); 
     }
 };
 
@@ -52,6 +68,6 @@ int main() {
     cout << "Depth First Traversal starting from vertex 2:\n";
     g.DFS(2); // Perform DFS traversal starting from vertex 2
     cout << endl << "Depth First Traversal starting from vertex 1:\n";
-    g.DFS(1); // Perform DFS traversal starting from vertex 2
+    g.DFS(1); // Perform DFS traversal starting from vertex 1
     return 0; // Exit the program
 }
