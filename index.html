@@ -6,6 +6,10 @@
     <title>To-do List</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
+        .checkbox:checked + .checkbox-custom + .text-label {
+            text-decoration: line-through;
+            color: gray;
+        }
         .checkbox:checked + .checkbox-custom {
             background-color: black;
             border-color: black;
@@ -37,7 +41,7 @@
                             <polyline points="20 6 9 17 4 12" />
                         </svg>
                     </label>
-                    <label for="todo1" class="text-sm font-medium flex-1 cursor-pointer">
+                    <label for="todo1" class="text-sm font-medium flex-1 cursor-pointer text-label">
                         Buy groceries
                     </label>
                     <button class="hover-svg-black inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 px-4 py-2 text-red-500 hover-bg-grey">
@@ -55,7 +59,7 @@
                             <polyline points="20 6 9 17 4 12" />
                         </svg>
                     </label>
-                    <label for="todo2" class="text-sm font-medium flex-1 cursor-pointer">
+                    <label for="todo2" class="text-sm font-medium flex-1 cursor-pointer text-label">
                         Call mom
                     </label>
                     <button class="hover-svg-black inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 px-4 py-2 text-red-500 hover-bg-grey">
@@ -73,8 +77,8 @@
                             <polyline points="20 6 9 17 4 12" />
                         </svg>
                     </label>
-                    <label for="todo3" class="text-sm font-medium flex-1 cursor-pointer">
-                        Finish CodeKage video
+                    <label for="todo3" class="text-sm font-medium flex-1 cursor-pointer text-label">
+                        Buy groceries
                     </label>
                     <button class="hover-svg-black inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 px-4 py-2 text-red-500 hover-bg-grey">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5">
