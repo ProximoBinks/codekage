@@ -1,155 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather App</title>
+    <title>To-do List</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .checkbox:checked + .checkbox-custom {
+            background-color: black;
+            border-color: black;
+        }
+        .checkbox:checked + .checkbox-custom svg {
+            display: block;
+        }
+        .checkbox-custom {
+            border-radius: 50%;
+            border: 2px solid black;
+        }
+        .hover-bg-grey:hover {
+            background-color: grey;
+        }
+        .hover-svg-black:hover svg {
+            stroke: black;
+        }
+    </style>
 </head>
-
 <body>
     <div class="flex flex-col items-center justify-center min-h-screen bg-gray-100">
-  <div class="w-full max-w-md p-4 bg-white rounded-xl shadow-2xl ">
-    <h1 class="text-2xl font-bold text-center text-gray-900">To-Do List</h1>
-    <div class="mt-4 space-y-4">
-      <div class="flex items-center space-x-2">
-        <button
-          type="button"
-          role="checkbox"
-          aria-checked="false"
-          data-state="unchecked"
-          value="on"
-          class="peer h-4 w-4 shrink-0 rounded-sm border border-primary ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground"
-          id="todo1"
-        ></button>
-        <input
-          aria-hidden="true"
-          tabindex="-1"
-          type="checkbox"
-          value="on"
-          style="transform: translateX(-100%); position: absolute; pointer-events: none; opacity: 0; margin: 0px;"
-        />
-        <label
-          class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 flex-1 text-gray-900"
-          for="todo1"
-        >
-          Buy groceries
-        </label>
-        <button class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 text-red-500">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="w-5 h-5"
-          >
-            <path d="M3 6h18"></path>
-            <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"></path>
-            <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"></path>
-          </svg>
-        </button>
-      </div>
-      <div class="flex items-center space-x-2">
-        <button
-          type="button"
-          role="checkbox"
-          aria-checked="false"
-          data-state="unchecked"
-          value="on"
-          class="peer h-4 w-4 shrink-0 rounded-sm border border-primary ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground"
-          id="todo2"
-        ></button>
-        <input
-          aria-hidden="true"
-          tabindex="-1"
-          type="checkbox"
-          value="on"
-          style="transform: translateX(-100%); position: absolute; pointer-events: none; opacity: 0; margin: 0px;"
-        />
-        <label
-          class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 flex-1 text-gray-900"
-          for="todo2"
-        >
-          Finish project report
-        </label>
-        <button class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 text-red-500">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="w-5 h-5"
-          >
-            <path d="M3 6h18"></path>
-            <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"></path>
-            <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"></path>
-          </svg>
-        </button>
-      </div>
-      <div class="flex items-center space-x-2">
-        <button
-          type="button"
-          role="checkbox"
-          aria-checked="false"
-          data-state="unchecked"
-          value="on"
-          class="peer h-4 w-4 shrink-0 rounded-sm border border-primary ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground"
-          id="todo3"
-        ></button>
-        <input
-          aria-hidden="true"
-          tabindex="-1"
-          type="checkbox"
-          value="on"
-          style="transform: translateX(-100%); position: absolute; pointer-events: none; opacity: 0; margin: 0px;"
-        />
-        <label
-          class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 flex-1 text-gray-900"
-          for="todo3"
-        >
-          Call mom
-        </label>
-        <button class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 text-red-500">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="w-5 h-5"
-          >
-            <path d="M3 6h18"></path>
-            <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"></path>
-            <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"></path>
-          </svg>
-        </button>
-      </div>
+        <div class="w-full max-w-md p-4 bg-white rounded-xl shadow-2xl">
+            <h1 class="text-2xl font-bold text-center text-gray-900">To-Do List</h1>
+            <div class="mt-4 space-y-4">
+                <!-- Repeat this block for each to-do item -->
+                <div class="flex items-center space-x-2">
+                    <input type="checkbox" id="todo1" class="checkbox opacity-0 absolute h-4 w-4" />
+                    <label for="todo1" class="checkbox-custom flex items-center justify-center h-4 w-4">
+                        <svg class="w-3 h-3 text-white hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <polyline points="20 6 9 17 4 12" />
+                        </svg>
+                    </label>
+                    <label for="todo1" class="text-sm font-medium flex-1">
+                        Buy groceries
+                    </label>
+                    <button class="hover-svg-black inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 px-4 py-2 text-red-500 hover-bg-grey">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5">
+                            <path d="M3 6h18"></path>
+                            <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"></path>
+                            <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div class="mt-6 flex items-center space-x-4">
+                <button class="hover-bg-grey inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:text-accent-foreground h-10 px-4 py-2 flex-1">
+                    Add new item
+                </button>
+                <button class="hover-bg-grey inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:text-accent-foreground h-10 px-4 py-2 flex-1">
+                    Clear completed
+                </button>
+            </div>
+        </div>
     </div>
-    <div class="mt-6 flex items-center space-x-4">
-      <button class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 flex-1">
-        Add new item
-      </button>
-      <button class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 flex-1">
-        Clear completed
-      </button>
-    </div>
-  </div>
-</div>
+    <script>
+        document.querySelectorAll('.checkbox').forEach(checkbox => {
+            checkbox.addEventListener('change', function() {
+                this.nextElementSibling.classList.toggle('checked', this.checked);
+            });
+        });
+    </script>
 </body>
-
 </html>
