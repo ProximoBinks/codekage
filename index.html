@@ -13,6 +13,10 @@
       .hover-bg-black:hover {
           background-color: #2f2f31;
       }
+      .custom-focus:focus {
+          outline: none;
+          box-shadow: 0 0 0 2px #a1a1aa;
+      }
     </style>
 </head>
 
@@ -78,7 +82,10 @@
             <h2 class="text-xl font-bold flex items-center gap-2">
               <span class="flex shrink-0 rounded-full relative overflow-visible w-10 h-10">
                 <span class="absolute right-0 top-0 flex h-3 w-3 rounded-full bg-green-600"></span>
-                <span class="flex h-full w-full items-center justify-center rounded-full bg-muted">CK</span>
+                <span class="flex shrink-0 rounded-full relative overflow-visible w-10 h-10">
+                  <img src="/logo.png" alt="CodeKage" class="rounded-full w-full h-full object-cover">
+                  <span class="absolute right-0 top-0 flex h-3 w-3 rounded-full bg-green-600"></span>
+              </span>
               </span>
               <div>
                 CodeKage
@@ -122,9 +129,10 @@
                 </svg>
               </button>
               <input
-                class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 flex-1"
-                placeholder="Type a message..."
-              />
+        class="custom-focus flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground disabled:cursor-not-allowed disabled:opacity-50 flex-1"
+        placeholder="Type a message..."
+    />
+
               <button class="hover-bg-black bg-black text-white inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground h-10 px-4 py-2">
                 Send
               </button>
