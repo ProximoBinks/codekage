@@ -1,212 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nike Page</title>
+  <title>Yu-Gi-Oh</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    .hover-bg-grey:hover {
-      background-color: #f4f4f5;
-    }
-
-    .hover-bg-black:hover {
-      background-color: #707072;
-    }
-
-    .hover\:border-color:hover {
-      border-color: black;
-    }
-
-    .clicked {
-      background-color: #cccccc;
-    }
-  </style>
 </head>
-
 <body>
   <div class="flex items-center justify-center h-screen">
-    <div class="flex max-w-4xl mx-auto my-8">
-
-      <div class="flex flex-col w-2/3 relative right-12">
-        <div class="relative">
-          <div class="flex items-center space-x-2 mb-4 absolute top-5 left-5 bg-white p-2 rounded-full">
-            <img src="highly-rated.svg" alt="Highly Rated Icon" class="h-5 w-5 pl-2">
-            <span class="font-semibold text-sm pr-2">Highly Rated</span>
-          </div>
-          <img id="productImage" alt="Air Jordan 1 High OG 'Royal Reimagined'" class="mx-auto rounded-lg"
-            src="/image3.jpg" style="width: 100%; height: 100%; object-fit: cover;" />
-          <div class="flex justify-end space-x-1 absolute bottom-4 right-4">
-            <button
-              class="inline-flex items-center justify-center text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-10 bg-white rounded-full p-2">
-              <img src="left.svg" alt="Left Icon" class="w-6 h-6">
-            </button>
-            <button id="rightButton" onclick="nextImage()" onmousedown="changeButtonColorOnPress()"
-              onmouseup="revertButtonColorOnRelease()"
-              class="inline-flex items-center justify-center text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-10 bg-white rounded-full p-2">
-              <img src="right.svg" alt="Right Icon" class="w-6 h-6">
-            </button>
-          </div>
+    <div class="w-[400px] mx-auto p-1.5 bg-gradient-to-b from-yellow-300 to-yellow-600 shadow-xl border-[15px] border-[#575e6e]">
+      <div class="flex justify-center px-2 py-1 bg-[#bda93e] pl-1 pr-1 shadow-lg items-center h-[50px] mb-1 ml-2 mr-2 mt-1">
+        <h1 class="text-[18px] font-semibold text-[#555634]">THICC BLUE-EYES WHITE DRAGON</h1>
+        <img src="light.png" alt="Image Description" width="40" height="40" class="ml-2">
+      </div>
+      <div class="flex justify-end space-x-[2px] pr-5">
+        <img src="star.png" alt="Image Description" width="30" height="30">
+        <img src="star.png" alt="Image Description" width="30" height="30">
+        <img src="star.png" alt="Image Description" width="30" height="30">
+        <img src="star.png" alt="Image Description" width="30" height="30">
+        <img src="star.png" alt="Image Description" width="30" height="30">
+        <img src="star.png" alt="Image Description" width="30" height="30">
+        <img src="star.png" alt="Image Description" width="30" height="30">
+        <img src="star.png" alt="Image Description" width="30" height="30">
+      </div>
+      <div class="mt-1 border-[#6c70a0] rounded border-[8px] ml-5 mr-5 shadow-lg">
+        <img src="/dragon.jpg" alt="Dragon" class="w-full h-full object-cover rounded">
+      </div>
+      <div class="flex justify-between px-2 py-1 pl-6 pr-6">
+        <span class="text-sm font-medium">1st Edition</span>
+        <span class="text-sm font-medium">THICC-013</span>
+      </div>
+      <div class="px-2 py-1 bg-yellow-200 rounded ml-3 mr-3 border-[5px] border-[#b44e21] shadow-lg">
+        <p class="text-xs font-bold">[DRAGON]</p>
+        <p class="text-xs font-italic">
+          This legendary dragon is a powerful engine of destruction. Virtually invincible, very few have faced this
+          awesome creature and lived to tell the tale.
+        </p>
+        <hr class="border-black my-2 border-[1.5px]" />
+        <div class="flex justify-between">
+          <span class="text-sm font-bold ml-[170px]">ATK/3000</span>
+          <span class="text-sm font-bold ml-auto">DEF/2500</span>
         </div>
       </div>
-
-
-      <div class="flex flex-col w-1/2 p-4">
-        <h1 class="text-2xl font-bold mb-2">Air Jordan 1 High OG 'Royal Reimagined'</h1>
-        <p class="text-lg mb-4 font-semibold">Men's Shoes</p>
-        <div class="flex items-baseline space-x-2 mb-6">
-          <span class="text-xl font-semibold">$177.99</span>
-          <span class="text-sm line-through text-gray-500 font-semibold">$250</span>
-          <span class="text-sm text-green-700 font-semibold">28% off</span>
+      <div class="flex justify-between items-center px-2 py-1">
+        <span class="text-xs">85738563</span>
+        <div class="flex items-center">
+          <span class="text-xs font-semibold">© 2021 THICC YU-GI-OH! CARDS</span>
         </div>
-        <div class="flex space-x-2 mb-4">
-          <img alt="Air Jordan 1 High OG 'Royal Reimagined' - Thumbnail"
-            class="w-12 h-12 rounded-lg border border-black" height="50" src="/image1.jpg" width="50"
-            style="aspect-ratio: 50 / 50; object-fit: cover;" />
-          <img alt="Air Jordan 1 High OG 'Royal Reimagined' - Thumbnail"
-            class="w-12 h-12 rounded-lg border border-white hover:border-color" height="50" src="/image2.jpg" width="50"
-            style="aspect-ratio: 50 / 50; object-fit: cover;" />
-        </div>
-        <div class="flex justify-between items-center mb-6 w-4/5">
-          <h2 class="font-semibold">Select Size</h2>
-          <a class="text-gray-600 text-sm self-end font-semibold" href="#">
-            Size Guide
-          </a>
-        </div>
-        <div class="grid grid-cols-3 gap-2 mb-4 w-4/5">
-          <button
-            class="hover:border-color inline-flex items-center justify-center rounded-md font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 text-sm">
-            US 3.5
-          </button>
-          <button
-            class="hover:border-color inline-flex items-center justify-center rounded-md font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 text-sm">
-            US 4
-          </button>
-          <button
-            class="hover:border-color inline-flex items-center justify-center rounded-md font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 text-sm">
-            US 4.5
-          </button>
-          <button
-            class="hover:border-color inline-flex items-center justify-center rounded-md font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 text-sm">
-            US 5
-          </button>
-          <button
-            class="hover:border-color inline-flex items-center justify-center rounded-md font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 text-sm">
-            US 5.5
-          </button>
-          <button
-            class="hover:border-color inline-flex items-center justify-center rounded-md font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 text-sm">
-            US 6
-          </button>
-          <button
-            class="hover:border-color inline-flex items-center justify-center rounded-md font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 text-sm">
-            US 6.5
-          </button>
-          <button
-            class="hover:border-color inline-flex items-center justify-center rounded-md font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 text-sm">
-            US 7
-          </button>
-          <button
-            class="hover:border-color inline-flex items-center justify-center rounded-md font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 text-sm">
-            US 7.5
-          </button>
-          <button
-            class="hover:border-color inline-flex items-center justify-center rounded-md font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 text-sm">
-            US 8
-          </button>
-          <button
-            class="hover:border-color inline-flex items-center justify-center rounded-md font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 text-sm">
-            US 8.5
-          </button>
-          <button
-            class="hover:border-color inline-flex items-center justify-center rounded-md font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 text-sm">
-            US 9
-          </button>
-          <button
-            class="hover:border-color inline-flex items-center justify-center rounded-md font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 text-sm">
-            US 9.5
-          </button>
-          <button
-            class="hover:border-color inline-flex items-center justify-center rounded-md font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 text-sm">
-            US 10
-          </button>
-          <button
-            class="hover:border-color inline-flex items-center justify-center rounded-md font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 text-sm">
-            US 10.5
-          </button>
-          <button
-            class="hover:border-color inline-flex items-center justify-center rounded-md font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 text-sm">
-            US 11
-          </button>
-          <button
-            class="hover:border-color inline-flex items-center justify-center rounded-md font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 text-sm">
-            US 11.5
-          </button>
-          <button
-            class="hover:border-color inline-flex items-center justify-center rounded-md font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 text-sm">
-            US 12
-          </button>
-          <button
-            class="hover:border-color inline-flex items-center justify-center rounded-md font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 text-sm">
-            US 12.5
-          </button>
-          <button
-            class="hover:border-color inline-flex items-center justify-center rounded-md font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 text-sm">
-            US 13
-          </button>
-          <button
-            class="hover:border-color inline-flex items-center justify-center rounded-md font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 text-sm">
-            US 14
-          </button>
-          <button
-            class="hover:border-color inline-flex items-center justify-center rounded-md font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 text-sm">
-            US 15
-          </button>
-          <button
-            class="hover:border-color inline-flex items-center justify-center rounded-md font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 text-sm">
-            US 16
-          </button>
-          <button
-            class="hover:border-color inline-flex items-center justify-center rounded-md font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 text-sm">
-            US 17
-          </button>
-          <button
-            class="hover:border-color inline-flex items-center justify-center rounded-md font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 text-sm">
-            US 18
-          </button>
-        </div>
-        <button
-          class="hover-bg-black bg-black text-white inline-flex items-center justify-center text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-15 px-4 w-4/5 mb-4 rounded-full py-4">
-          Add to Bag
-        </button>
-        <button
-          class="hover:border-color inline-flex items-center justify-center text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-15 px-4 w-4/5 mb-4 bg-white border border-gray-300 rounded-full py-4">
-          Favourite
-          <img src="favourite.svg" alt="Favourite Icon" class="w-3.5 h-3.5 ml-2">
-        </button>
       </div>
     </div>
   </div>
 </body>
-
-<script>
-  function nextImage() {
-    var imgElement = document.getElementById('productImage');
-    var currentImgNumber = parseInt(imgElement.src.match(/image(\d+)\.jpg$/)[1]);
-    var nextImgNumber = currentImgNumber >= 11 ? 3 : currentImgNumber + 1;
-    imgElement.src = '/image' + nextImgNumber + '.jpg';
-  }
-
-  function changeButtonColorOnPress() {
-    var buttonElement = document.getElementById('rightButton');
-    buttonElement.classList.remove('bg-white');
-    buttonElement.classList.add('bg-gray-300'); // Change to #cccccc on press
-  }
-
-  function revertButtonColorOnRelease() {
-    var buttonElement = document.getElementById('rightButton');
-    buttonElement.classList.remove('bg-gray-300');
-    buttonElement.classList.add('bg-white'); // Revert to white on release
-  }
-</script>
+</html>
