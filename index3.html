@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pokemon Battle</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .trapezoid {
+        clip-path: polygon(0 0, 50% 0, 95% 0, 100% 100%, 0 100%);
+    }
+  </style>
+</head>
+
+<body>
+    <div class="flex flex-col justify-center space-y-6 p-20">
+        <div></div>
+        <div class="trapezoid flex-col items-center space-x-2 w-[350px] border-[6px] border-[#484848]">
+          <div class="bg-gray-200 p-2">
+            <span class="text-xl font-bold">Umbreon</span>
+            <span class="ml-20 text-lg font-bold">Lv.40</span>
+            <div class="ml-[70px] bg-[#484848] pl-1 pr-1 w-[170px] h-[18px] flex items-center">
+                <p class="font-bold text-[15px] text-orange-400">HP</p>
+                <div class="bg-[#36b54a] h-2 w-full ml-1"></div>
+            </div>                        
+          </div>
+        </div>
+        <div class="w-64 h-20 bg-[#e9e1e9] rounded-[50%] border-[6px] border-[#a7989f]"></div>
+        <div class="w-[300px] flex-col items-center space-x-2 border-[6px] border-[#484848]">
+          <div class="bg-gray-200 p-2">
+            <p class="text-lg font-bold">Creature Name</p>
+            <div class="flex items-center space-x-2">
+              <p class="text-sm">LV.42</p>
+              <p class="text-xs">104/104</p>
+            </div>
+          </div>
+          <div class="bg-blue-500 h-1 w-[200px]"></div>
+        </div>
+        <div class="w-64 h-20 bg-[#e9e1e9] rounded-[50%] border-[6px] border-[#a7989f]"></div>
+        <div class="bg-gray-200 p-4 grid grid-cols-2 gap-2">
+          <div class="bg-gray-100 p-2">
+            <p class="text-lg font-bold">What will</p>
+            <p class="text-lg font-bold">Snivy do?</p>
+          </div>
+          <div class="grid grid-cols-2 gap-2">
+            <button class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 bg-red-500">
+              Attack
+            </button>
+            <button class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 bg-yellow-500">
+              Special
+            </button>
+            <button class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 bg-green-500">
+              Defend
+            </button>
+            <button class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 bg-blue-500">
+              Run
+            </button>
+          </div>
+        </div>
+      </div>
+
+</body>
+
+</html>
