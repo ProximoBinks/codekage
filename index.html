@@ -1,15 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact Form</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Additional styles for customizing the dropdown */
+    .dropdown {
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      background-color: transparent;
+      background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg>');
+      background-repeat: no-repeat;
+      background-position: right 0.5rem center;
+      background-size: 1.5em 1.5em;
+    }
+  </style>
 </head>
-
 <body>
-  <div class="flex items-center justify-center h-screen"><div class="flex items-center justify-center h-screen">
+  <div class="flex items-center justify-center h-screen">
     <div class="rounded-lg border bg-card text-card-foreground shadow-sm" data-v0-t="card">
       <div class="p-6">
         <div class="space-y-8">
@@ -22,104 +33,47 @@
           <div class="space-y-4">
             <div class="grid grid-cols-2 gap-4">
               <div class="space-y-2">
-                <label
-                  class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-                  for="first-name"
-                >
+                <label class="text-sm font-medium leading-none" for="first-name">
                   First name
                 </label>
-                <input
-                  class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-                  id="first-name"
-                  placeholder="Enter your first name"
-                />
+                <input class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm" id="first-name" placeholder="Enter your first name" />
               </div>
               <div class="space-y-2">
-                <label
-                  class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-                  for="last-name"
-                >
+                <label class="text-sm font-medium leading-none" for="last-name">
                   Last name
                 </label>
-                <input
-                  class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-                  id="last-name"
-                  placeholder="Enter your last name"
-                />
+                <input class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm" id="last-name" placeholder="Enter your last name" />
               </div>
             </div>
             <div class="space-y-2">
-              <label
-                class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-                for="email"
-              >
+              <label class="text-sm font-medium leading-none" for="email">
                 Email
               </label>
-              <input
-                type="email"
-                class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-                id="email"
-                placeholder="Enter your email"
-              />
+              <input type="email" class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm" id="email" placeholder="Enter your email" />
             </div>
             <div class="space-y-2">
-              <label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
+              <label class="text-sm font-medium leading-none" for="pronoun">
                 Pronoun
               </label>
-              <button
-                type="button"
-                role="combobox"
-                aria-controls="radix-:Rjnrnnnla:"
-                aria-expanded="false"
-                aria-autocomplete="none"
-                dir="ltr"
-                data-state="closed"
-                data-placeholder=""
-                class="flex h-10 w-full items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-                aria-label="Pronoun"
-              >
-                <span style="pointer-events:none">Select your pronoun</span>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="h-4 w-4 opacity-50"
-                  aria-hidden="true"
-                >
-                  <path d="m6 9 6 6 6-6"></path>
-                </svg>
-              </button>
-              <select
-                aria-hidden="true"
-                tabindex="-1"
-                style="position:absolute;border:0;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;word-wrap:normal"
-              >
-                <option value=""></option>
+              <select id="pronoun" class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm dropdown">
+                <option>Select your pronoun</option>
+                <option value="he/him">He/Him</option>
+                <option value="she/her">She/Her</option>
+                <option value="they/them">They/Them</option>
+                <option value="they/them">Prefer not to say</option>
               </select>
             </div>
             <div class="space-y-2">
-              <label
-                class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-                for="message"
-              >
+              <label class="text-sm font-medium leading-none" for="message">
                 Message
               </label>
               <textarea
-                class="flex w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 min-h-[100px]"
+                class="flex w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-50 min-h-[100px]"
                 id="message"
                 placeholder="Enter your message"
               ></textarea>
             </div>
-            <button
-              class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-primary/90 h-10 px-4 py-2 bg-gray-800 text-white"
-              type="submit"
-            >
+            <button class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium hover:bg-black h-10 px-4 py-2 bg-gray-800 text-white" type="submit">
               Send message
             </button>
           </div>
@@ -127,7 +81,5 @@
       </div>
     </div>
   </div>
-  </div>
 </body>
-
 </html>
