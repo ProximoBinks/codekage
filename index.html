@@ -3,12 +3,165 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact Form</title>
+  <title>Cookie Form</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
+    /* The switch - the box around the slider */
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 50px;
+      height: 24px;
+    }
+
+    /* Hide default HTML checkbox */
+    .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    /* The slider */
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #e4e4e7;
+      -webkit-transition: .4s;
+      transition: .4s;
+    }
+
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 20px;
+      width: 20px;
+      left: 2px;
+      bottom: 2px;
+      background-color: white;
+      -webkit-transition: .4s;
+      transition: .4s;
+    }
+
+    input:checked + .slider {
+      background-color: #18181b;
+    }
+
+    input:focus + .slider {
+      box-shadow: 0 0 1px #18181b;
+    }
+
+    input:checked + .slider:before {
+      -webkit-transform: translateX(26px);
+      -ms-transform: translateX(26px);
+      transform: translateX(26px);
+    }
+
+    /* Rounded sliders */
+    .slider.round {
+      border-radius: 34px;
+    }
+
+    .slider.round:before {
+      border-radius: 50%;
+    }
   </style>
 </head>
 <body>
-  
+  <div class="flex items-center justify-center h-screen">
+    <div class="rounded-lg border bg-card text-card-foreground shadow-sm w-full max-w-lg" data-v0-t="card">
+      <div class="flex flex-col space-y-1.5 p-6 border-b border-dark-gray-300 pb-4">
+        <div class="flex items-center">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="mr-2"
+          >
+            <path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5"></path>
+            <path d="M8.5 8.5v.01"></path>
+            <path d="M16 15.5v.01"></path>
+            <path d="M12 12v.01"></path>
+            <path d="M11 17v.01"></path>
+            <path d="M7 14v.01"></path>
+          </svg>
+          <h3 class="text-2xl font-semibold whitespace-nowrap leading-none tracking-tight">Cookie Preferences</h3>
+        </div>
+        <p class="text-sm text-muted-foreground">
+          Manage your cookie settings. You can enable or disable different types of cookies below.
+        </p>
+      </div>
+      <div class="p-6 space-y-4 pt-4">
+        <div class="flex justify-between items-start space-y-2">
+          <div>
+            <label
+              class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+              for="essential"
+            >
+              Essential Cookies
+            </label>
+            <p class="text-dark-gray-500 text-sm">
+              These cookies are necessary for the website to function and cannot be switched off.
+            </p>
+          </div>
+          <label class="switch w-[65px]">
+            <input type="checkbox">
+            <span class="slider round"></span>
+          </label>
+        </div>
+        <div class="flex justify-between items-start space-y-2">
+          <div>
+            <label
+              class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+              for="analytics"
+            >
+              Analytics Cookies
+            </label>
+            <p class="text-dark-gray-500 text-sm">
+              These cookies allow us to count visits and traffic sources, so we can measure and improve the performance
+              of our site.
+            </p>
+          </div>
+          <label class="switch w-[93px]">
+            <input type="checkbox">
+            <span class="slider round"></span>
+          </label>
+        </div>
+        <div class="flex justify-between items-start space-y-2">
+          <div>
+            <label
+              class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+              for="marketing"
+            >
+              Marketing Cookies
+            </label>
+            <p class="text-dark-gray-500 text-sm">These cookies help us show you relevant ads.</p>
+          </div>
+          <label class="switch w-[px]">
+            <input type="checkbox">
+            <span class="slider round"></span>
+          </label>
+        </div>
+      </div>
+      <div class="border-t border-dark-gray-300 mt-4"></div>
+      <div class="flex items-center p-6">
+        <button
+          class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium disabled:pointer-events-none bg-black text-white text-primary-foreground hover:bg-gray-800 h-10 px-4 py-2 ml-auto"
+          type="submit"
+        >
+          Save Preferences
+        </button>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
