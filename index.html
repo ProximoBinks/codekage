@@ -1,92 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>URL Shorterner</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page V2</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+  </style>
 </head>
+
 <body>
-    <div class="w-full h-screen bg-white p-8">
-        <div class="flex flex-col items-center justify-center h-full">
-          <h1 class="text-2xl font-semibold text-gray-900 mb-6">URL Shortener</h1>
-          <div class="w-full max-w-md">
-            <div class="rounded-md shadow-sm">
-              <input
-                type="text"
-                aria-label="URL input"
-                class="block w-full text-lg py-3 px-4 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
-                value="https://www.example.com"
-              />
+  <div class="min-h-screen flex items-center justify-center bg-gray-50">
+    <div class="w-full max-w-md">
+      <div class="flex justify-center">
+        <img src="/logo2.png" width="100" height="100" alt="Logo" class="h-25 w-25"
+          style="aspect-ratio:100/100;object-fit:cover" />
+      </div>
+      <div class="rounded-lg border bg-card text-card-foreground shadow-sm mt-8" data-v0-t="card">
+        <div class="flex flex-col space-y-1.5 p-6">
+          <h3 class="whitespace-nowrap tracking-tight text-2xl font-bold text-center">Login</h3>
+        </div>
+        <div class="p-6">
+          <form class="space-y-4">
+            <div class="space-y-2">
+              <label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                for="username">
+                Username
+              </label>
+              <input type="text"
+                class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                id="username" required="" />
+            </div>
+            <div class="space-y-2">
+              <label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                for="password">
+                Password
+              </label>
+              <input type="password"
+                class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                id="password" required="" />
             </div>
             <button
-              type="button"
-              role="combobox"
-              aria-controls="radix-:Raunnnla:"
-              aria-expanded="false"
-              aria-autocomplete="none"
-              dir="ltr"
-              data-state="closed"
-              data-placeholder=""
-              class="flex h-10 w-full items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-            >
-              <span style="pointer-events:none">Select a format</span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="h-4 w-4 opacity-50"
-                aria-hidden="true"
-              >
-                <path d="m6 9 6 6 6-6"></path>
-              </svg>
+              class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-black text-white hover:bg-gray-800 h-10 px-4 py-2 w-full"
+              type="submit">
+              Login
             </button>
-            <select
-              aria-hidden="true"
-              tabindex="-1"
-              style="position:absolute;border:0;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;word-wrap:normal"
-            >
-              <option value=""></option>
-            </select>
-            <button
-              class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 px-4 w-full mt-4 py-2 rounded-b-md"
-              type="submit"
-            >
-              Shorten URL
-            </button>
-          </div>
-          <div class="w-full max-w-md mt-8">
-            <h2 class="text-lg font-medium text-gray-900 mb-4">Your Shortened URLs</h2>
-            <div class="space-y-4">
-              <div class="flex items-center justify-between bg-gray-100 p-4 rounded-md">
-                <div>
-                  <p class="text-sm text-gray-900 mb-1">short.ly/3rFg4</p>
-                  <p class="text-xs text-gray-500">Clicked 24 times</p>
-                </div>
-                <button class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3">
-                  Copy
-                </button>
-              </div>
-              <div class="flex items-center justify-between bg-gray-100 p-4 rounded-md">
-                <div>
-                  <p class="text-sm text-gray-900 mb-1">short.ly/7tYh1</p>
-                  <p class="text-xs text-gray-500">Clicked 67 times</p>
-                </div>
-                <button class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3">
-                  Copy
-                </button>
-              </div>
-            </div>
+          </form>
+          <div class="mt-4 text-center text-sm">
+            <a class="underline" href="#" rel="ugc">
+              Forgot your password?
+            </a>
           </div>
         </div>
       </div>
+    </div>
+  </div>
 </body>
+
 </html>
