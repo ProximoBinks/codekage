@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pokemon Battle</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .trapezoid {
+      clip-path: polygon(0 0, 50% 0, 93% 0, 100% 100%, 0 100%);
+    }
+    .trapezoid2 {
+      clip-path: polygon(7% 0, 100% 0, 100% 100%, 0 100%);
+    }
+    .inner-border {
+      box-shadow: inset 0 0 0 8px #ab97a0;
+    }
+    .align-right {
+      margin-left: auto;
+    }
+    .inner-border1 {
+      box-shadow: inset 0 0 0 8px #606068;
+    }
+    .inner-border2 {
+      box-shadow: inset 0 0 0 3px #ffffff;
+    }
+    .bg-gradient {
+      background: rgb(255, 255, 255);
+      background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(184, 144, 64, 1) 100%);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="flex flex-col justify-center pt-[50px] w-[650px] bg-gradient">
+    <div></div>
+    <div class="trapezoid flex-col items-center space-x-2 w-[300px] border-t-[6px] border-r-[6px] border-b-[6px] border-[#484848]">
+      <div class="bg-[#b8b8b8] p-2">
+        <span class="text-2xl font-bold">Umbreon</span>
+        <span class="ml-20 text-xl font-extrabold">Lv.40</span>
+        <div class="ml-[70px] bg-[#484848] pl-1 pr-1 w-[190px] h-[18px] flex items-center">
+          <p class="font-black text-[15px] text-orange-400">HP</p>
+          <div class="bg-[#36b54a] h-2 w-full ml-1"></div>
+        </div>
+      </div>
+    </div>
+    <div class="flex justify-end">
+      <div class="relative">
+        <div class="mr-1 w-[340px] h-[100px] bg-[#e9e1e9] rounded-[50%] border-[3px] border-[#432f41] inner-border mt-[100px]"></div>
+        <img src="Umbreon.png" alt="Umbreon" class="absolute h-[150px] ml-[100px]" style="margin-top: -185px;">
+      </div>
+    </div>
+    <div class="mt-[-25px] trapezoid2 align-right flex-col items-center w-[280px] border-t-[6px] border-l-[6px] border-b-[6px] border-[#484848]">
+      <div class="bg-[#b8b8b8] p-2">
+        <span class="ml-4 text-2xl font-bold">Snivy</span>
+        <span class="ml-20 text-xl font-extrabold">Lv.42</span>
+        <div class="ml-[85px] bg-[#484848] pl-1 pr-1 w-[170px] h-[18px] flex items-center">
+          <p class="font-black text-[15px] text-orange-400">HP</p>
+          <div class="bg-[#36b54a] h-2 w-full ml-1"></div>
+        </div>
+        <div class="ml-[135px] bg-[#e0e0e0] w-fit rounded-md">
+          <p class="mb-[-8px] pl-2 pr-2 font-extrabold text-xl" style="letter-spacing: 4px;">104/104</p>
+        </div>
+      </div>
+    </div>
+    <div class="align-right h-[12px] w-[240px] border-[4px] border-[#484848] rounded-md mr-[10px] mt-[-1px]"
+      style="background: linear-gradient(to right, #007bff 80%, #ffffff 80%);"></div>
+    <div class="relative">
+      <img src="Snivy.png" alt="Snivy" class="ml-[80px] absolute h-[120px]" style="margin-top: -105px;">
+    </div>
+    <div class="ml-[-80px] w-[500px] h-[130px] bg-[#e9e1e9] rounded-[50%] border-[3px] border-[#432f41] inner-border mt-[-40px]">
+    </div>
+    <div class="bg-gray-200 grid grid-cols-2 gap-2 mt-[-75px] border-t-[4px] border-black">
+      <div class="ml-1 inner-border1 bg-gray-100 p-2 border-[3px] border-[#f8d868] flex flex-col items-start justify-center rounded-lg h-[120px]">
+        <p class="ml-3 text-3xl font-bold">What will</p>
+        <p class="ml-3 text-3xl font-bold">Snivy do?</p>
+      </div>
+      <div class="grid grid-cols-2 mr-[5px] ml-[-5px]">
+        <button
+          class="inline-flex items-center justify-center rounded-2xl text-[26px] font-bold text-white h-[60px] px-4 py-2 bg-[#f8a8b0] inner-border2 border-[5px] border-[#c04040]">
+          FIGHT
+        </button>
+        <button
+          class="inline-flex items-center justify-center rounded-2xl text-[26px] font-bold text-white h-[60px] px-4 py-2 bg-[#e09828] inner-border2 border-[5px] border-[#303030]">
+          BAG
+        </button>
+        <button
+          class="inline-flex items-center justify-center rounded-2xl text-[26px] font-bold text-white hover-yellow-800 h-[60px] px-4 py-2 bg-[#59b526] inner-border2 border-[5px] border-[#303030]">
+          POKéMON
+        </button>
+        <button
+          class="inline-flex items-center justify-center rounded-2xl text-[26px] font-bold text-white h-[60px] px-4 py-2 bg-[#2890c8] inner-border2 border-[5px] border-[#303030]">
+          RUN
+        </button>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
