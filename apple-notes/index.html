@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apple Notes</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+  <div class="flex h-screen w-full bg-yellow-100">
+    <div class="flex flex-col w-96 border-r border-yellow-200 bg-yellow-50">
+      <div class="flex items-center h-20 px-8 border-b border-yellow-200 bg-yellow-50">
+        <img src="note1.svg" alt="Notes Icon" class="h-10 w-10 text-yellow-500">
+        <h1 class="ml-4 text-xl font-semibold text-yellow-900">Notes</h1>
+      </div>
+      
+      <div class="flex-1 overflow-y-auto">
+        <div class="py-6 space-y-4">
+          <button class="inline-flex items-center rounded-md text-base font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-gray-100 hover:text-black h-12 px-6 py-3 justify-start text-yellow-900">
+            <img src="note2.svg" alt="All Notes Icon" class="h-6 w-6 text-yellow-500">
+            <span class="ml-4 text-xl">All Notes</span>
+          </button>          
+          <button class="inline-flex items-center rounded-md text-base font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-gray-100 hover:text-black h-12 px-6 py-3 justify-start text-yellow-900">
+            <img src="trash.svg" alt="Trash Icon" class="h-6 w-6 text-yellow-500">
+            <span class="ml-4 text-xl">Trash</span>
+          </button>          
+        </div>
+        <div class="border-t border-yellow-200"></div>
+        <div class="p-6 space-y-4">
+          <div class="flex items-center justify-between px-4 py-2 rounded-lg bg-yellow-200">
+            <span class="text-base text-yellow-900">Note 1</span>
+            <img src="arrow.svg" alt="Arrow Icon" class="h-6 w-6 text-yellow-500">
+          </div>          
+          <div class="flex items-center justify-between px-4 py-2 rounded-lg hover:bg-yellow-200">
+            <span class="text-base text-yellow-900">Note 2</span>
+            <img src="arrow.svg" alt="Arrow Icon" class="h-6 w-6 text-yellow-500">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="flex flex-col flex-1 overflow-hidden">
+      <div class="flex items-center h-20 px-8 border-b border-yellow-200 bg-yellow-50">
+        <h2 class="text-xl font-semibold text-yellow-900">Note 1</h2>
+      </div>
+      <div class="flex-1 overflow-y-auto p-8 space-y-6" contenteditable="true">
+        <p class="text-xl text-yellow-900">This is a note.</p>
+        <p class="text-xl text-yellow-900" contenteditable="true">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+          dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+          ea commodo consequat.
+        </p>
+      </div>
+      
+    </div>
+  </div>
+</body>
+
+</html>
