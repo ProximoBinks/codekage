@@ -11,138 +11,69 @@
 </head>
 
 <body>
-  <section class="flex flex-col w-full min-h-screen p-4 md:p-6">
-    <header class="flex items-center h-16 px-4 border-b shrink-0 md:px-6">
-      <nav class="flex-col hidden gap-6 text-lg font-medium md:flex md:flex-row md:items-center md:gap-5 md:text-sm lg:gap-6">
-        <a class="flex items-center gap-2 text-lg font-semibold md:text-base" href="#">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="w-6 h-6"
-          >
-            <path d="M3 9h18v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9Z"></path>
-            <path d="m3 9 2.45-4.9A2 2 0 0 1 7.24 3h9.52a2 2 0 0 1 1.8 1.1L21 9"></path>
-            <path d="M12 3v6"></path>
-          </svg>
-          <span class="sr-only">Pricing Dashboard</span>
-        </a>
-        <a class="font-bold" href="#">
-          Overview
-        </a>
-        <a class="text-zinc-500 dark:text-zinc-400" href="#">
-          Subscription Plans
-        </a>
-        <a class="text-zinc-500 dark:text-zinc-400" href="#">
-          Billing
-        </a>
-      </nav>
-    </header>
-    <main class="flex min-h-[calc(100vh_-_theme(spacing.16))] flex-1 flex-col gap-4 p-4 md:gap-8 md:p-10">
-      <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-        <div class="rounded-lg border bg-card text-card-foreground shadow-sm" data-v0-t="card">
-          <div class="p-6 flex flex-row items-center justify-between pb-2 space-y-0">
-            <h3 class="whitespace-nowrap tracking-tight text-sm font-medium">Total Revenue</h3>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              class="w-4 h-4 text-zinc-500 dark:text-zinc-400"
-            >
-              <line x1="12" x2="12" y1="2" y2="22"></line>
-              <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
-            </svg>
-          </div>
-          <div class="p-6">
-            <div class="text-2xl font-bold">$45,231.89</div>
-            <p class="text-xs text-zinc-500 dark:text-zinc-400">+20.1% from last month</p>
-          </div>
-        </div>
-        <div class="rounded-lg border bg-card text-card-foreground shadow-sm" data-v0-t="card">
-          <div class="p-6 flex flex-row items-center justify-between pb-2 space-y-0">
-            <h3 class="whitespace-nowrap tracking-tight text-sm font-medium">Active Subscriptions</h3>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              class="w-4 h-4 text-zinc-500 dark:text-zinc-400"
-            >
-              <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
-              <circle cx="9" cy="7" r="4"></circle>
-              <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
-              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-            </svg>
-          </div>
-          <div class="p-6">
-            <div class="text-2xl font-bold">+2350</div>
-            <p class="text-xs text-zinc-500 dark:text-zinc-400">+180.1% from last month</p>
-          </div>
+  <main class="flex flex-col items-center justify-center h-screen bg-gray-100">
+    <div
+      class="rounded-lg border bg-white text-card-foreground shadow-sm w-full max-w-lg p-6 space-y-4"
+      data-v0-t="card"
+    >
+      <div class="flex-col space-y-1.5 p-6 flex justify-between items-center">
+        <h2 class="text-2xl font-semibold">Add Your Information</h2>
+        <div class="inline-flex items-center rounded-full whitespace-nowrap border px-2.5 py-0.5 w-fit font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-black text-white hover:bg-gray-600 text-sm">
+          Required
         </div>
       </div>
-      <div>
-        <div class="rounded-lg border bg-card text-card-foreground shadow-sm" data-v0-t="card">
-          <div class="relative w-full overflow-auto">
-            <table class="w-full caption-bottom text-sm">
-              <thead class="[&amp;_tr]:border-b">
-                <tr class="border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted">
-                  <th class="h-12 px-4 text-left align-middle font-medium text-muted-foreground [&amp;:has([role=checkbox])]:pr-0 w-[100px]">
-                    Invoice
-                  </th>
-                  <th class="h-12 px-4 text-left align-middle font-medium text-muted-foreground [&amp;:has([role=checkbox])]:pr-0">
-                    Status
-                  </th>
-                  <th class="h-12 px-4 text-left align-middle font-medium text-muted-foreground [&amp;:has([role=checkbox])]:pr-0">
-                    Method
-                  </th>
-                  <th class="h-12 px-4 align-middle font-medium text-muted-foreground [&amp;:has([role=checkbox])]:pr-0 text-right">
-                    Amount
-                  </th>
-                </tr>
-              </thead>
-              <tbody class="[&amp;_tr:last-child]:border-0">
-                <tr class="border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted">
-                  <td class="p-4 align-middle [&amp;:has([role=checkbox])]:pr-0 font-medium">INV001</td>
-                  <td class="p-4 align-middle [&amp;:has([role=checkbox])]:pr-0">Paid</td>
-                  <td class="p-4 align-middle [&amp;:has([role=checkbox])]:pr-0">$250.00</td>
-                  <td class="p-4 align-middle [&amp;:has([role=checkbox])]:pr-0 text-right">Credit Card</td>
-                </tr>
-                <tr class="border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted">
-                  <td class="p-4 align-middle [&amp;:has([role=checkbox])]:pr-0 font-medium">INV002</td>
-                  <td class="p-4 align-middle [&amp;:has([role=checkbox])]:pr-0">Pending</td>
-                  <td class="p-4 align-middle [&amp;:has([role=checkbox])]:pr-0">$150.00</td>
-                  <td class="p-4 align-middle [&amp;:has([role=checkbox])]:pr-0 text-right">PayPal</td>
-                </tr>
-                <tr class="border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted">
-                  <td class="p-4 align-middle [&amp;:has([role=checkbox])]:pr-0 font-medium">INV003</td>
-                  <td class="p-4 align-middle [&amp;:has([role=checkbox])]:pr-0">Unpaid</td>
-                  <td class="p-4 align-middle [&amp;:has([role=checkbox])]:pr-0">$350.00</td>
-                  <td class="p-4 align-middle [&amp;:has([role=checkbox])]:pr-0 text-right">Bank Transfer</td>
-                </tr>
-              </tbody>
-            </table>
+      <div class="p-6">
+        <div class="space-y-6">
+          <div class="space-y-2">
+            <label
+              class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+              for="name"
+            >
+              Name
+            </label>
+            <input
+              class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+              id="name"
+              placeholder="Enter your name"
+              required=""
+            />
           </div>
+          <div class="space-y-2">
+            <label
+              class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+              for="email"
+            >
+              Email
+            </label>
+            <input
+              class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+              id="email"
+              placeholder="Enter your email"
+              required=""
+              type="email"
+            />
+          </div>
+          <div class="space-y-2">
+            <label
+              class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+              for="comments"
+            >
+              Comments
+            </label>
+            <textarea
+              class="flex w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 min-h-[100px]"
+              id="comments"
+              placeholder="Enter your comments"
+              required=""
+            ></textarea>
+          </div>
+          <button class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-black text-white hover:bg-gray-600 h-10 px-4 py-2 w-full">
+            Submit
+          </button>
         </div>
       </div>
-    </main>
-  </section>
+    </div>
+  </main>
 </body>
 
 </html>
