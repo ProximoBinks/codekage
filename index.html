@@ -4,56 +4,32 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login & Create Account UI</title>
+  <title>Valentines Day</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
+    .gradient-background {
+      background: rgb(255, 208, 229);
+      background: linear-gradient(180deg, rgba(255, 208, 229, 1) 0%, rgba(255, 232, 242, 1) 36%, rgba(255, 255, 255, 1) 100%);
+    }
   </style>
 </head>
 
-<body>
+<body class="gradient-background">
   <div class="flex items-center justify-center h-screen">
-    <div class="max-w-sm mx-auto">
-      <h1 class="text-3xl font-bold mb-6">Login</h1>
-      <form class="space-y-4">
-        <div>
-          <label for="username" class="block text-sm font-medium mb-1">
-            Username:
-          </label>
-          <input id="username" class="w-full border-gray-300 shadow-sm" type="text" />
-        </div>
-        <div>
-          <label for="password" class="block text-sm font-medium mb-1">
-            Password:
-          </label>
-          <input id="password" class="w-full border-gray-300 shadow-sm" type="password" />
-        </div>
-        <button class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition disabled:pointer-events-none disabled:opacity-50 bg-black text-white hover:bg-gray-800 h-10 px-4 py-2 w-full">
-          Login
+    <div class="flex flex-col items-center p-4">
+      <img src="/placeholder.svg" alt="Cute kitten with flowers" class="rounded-md" width="225" height="300"
+        style="aspect-ratio: 225 / 300; object-fit: cover;" />
+      <h2 class="text-2xl font-bold text-[#bd1e59] my-4">Will you be my Valentine?</h2>
+      <div class="flex gap-4">
+        <button
+          class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition disabled:pointer-events-none disabled:opacity-50 hover:bg-green-400 h-10 px-4 py-2 bg-green-500 text-white">
+          Yes
         </button>
-      </form>
-      <div class="text-center mt-4">
-        <a class="text-blue-600 hover:underline" href="#">
-          Forgot your password?
-        </a>
+        <button
+          class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition disabled:pointer-events-none disabled:opacity-50 hover:bg-red-700 h-10 px-4 py-2 bg-red-500 text-white">
+          No
+        </button>
       </div>
-      <h2 class="text-3xl font-bold mt-12 mb-6">Create Account</h2>
-      <form class="space-y-4">
-        <div>
-          <label for="new-username" class="block text-sm font-medium mb-1">
-            Username:
-          </label>
-          <input id="new-username" class="w-full border-gray-300 shadow-sm" type="text" />
-        </div>
-        <div>
-          <label for="new-password" class="block text-sm font-medium mb-1">
-            Password:
-          </label>
-          <input id="new-password" class="w-full border-gray-300 shadow-sm" type="password" />
-        </div>
-        <button class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition disabled:pointer-events-none disabled:opacity-50 bg-blue-600 text-white hover:bg-gray-800 h-10 px-4 py-2 w-full">
-          Create account
-        </button>
-      </form>
     </div>
   </div>
 </body>
