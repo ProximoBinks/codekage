@@ -14,7 +14,7 @@
   <div class="flex items-center justify-center h-screen">
     <div class="max-w-sm mx-auto">
       <h1 class="text-3xl font-bold mb-6">Login</h1>
-      <form class="space-y-4">
+      <form class="space-y-4" id="login-form">
         <div>
           <label for="username" class="block text-sm font-medium mb-1">
             Username:
@@ -27,7 +27,7 @@
           </label>
           <input id="password" class="w-full border-gray-300 shadow-sm" type="password" />
         </div>
-        <button class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition disabled:pointer-events-none disabled:opacity-50 bg-black text-white hover:bg-gray-800 h-10 px-4 py-2 w-full">
+        <button type="button" class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition disabled:pointer-events-none disabled:opacity-50 bg-black text-white hover:bg-gray-800 h-10 px-4 py-2 w-full" id="login-button">
           Login
         </button>
       </form>
@@ -56,6 +56,27 @@
       </form>
     </div>
   </div>
+  <!-- Popup Modal -->
+  <div class="fixed inset-0 bg-black bg-opacity-50 hidden flex justify-center items-center" id="popup-modal">
+    <div class="bg-white p-4 rounded-lg shadow-lg max-w-sm mx-auto w-full">
+      <h2 class="text-xl font-bold mb-4">Login Successful</h2>
+      <button class="bg-blue-500 text-white rounded px-4 py-2" onclick="closeModal()">OK</button>
+    </div>
+  </div>
+  <script>
+    document.getElementById('login-button').addEventListener('click', function() {
+      // Show the modal
+      document.getElementById('popup-modal').classList.remove('hidden');
+      
+      // Clear the input fields
+      document.getElementById('username').value = '';
+      document.getElementById('password').value = '';
+    });
+  
+    function closeModal() {
+      document.getElementById('popup-modal').classList.add('hidden');
+    }
+  </script>
 </body>
 
 </html>
