@@ -4,58 +4,69 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Movie Card</title>
+  <title>Responsive Sign-up Page</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
   </style>
 </head>
 
 <body>
-  <div class='flex items-center justify-center h-screen bg-[#0d1829] '>
-    <div class=' mx-auto bg-white rounded-3xl shadow-xl'>
-      <div class="grid rounded-3xl max-w-[370px] shadow-sm bg-slate-100  flex-col">
-        <img src="/spiderverse.jpg" width="375" height="200" class="rounded-t-3xl justify-center grid h-80 object-cover"
-          alt="movie.title" />
-        <div class="group p-6 grid z-10">
-          <a href="/" class="group-hover:text-cyan-700 font-bold sm:text-2xl line-clamp-2 transition-all">
-            Spider-Man: Across the Spider-Verse
-          </a>
-          <span class="text-slate-400 pt-2 font-semibold">
-            (2023)
-          </span>
-          <div class="h-28">
-            <span class="line-clamp-4 py-2 text-sm font-light leading-relaxed">
-              Miles Morales catapults across the Multiverse, where he encounters a team of Spider-People charged with
-              protecting its very existence. When the heroes clash on how to handle a new threat, Miles must redefine
-              what it means to be a hero.
-            </span>
+  <div class="flex h-screen">
+    <div class="hidden lg:flex items-center justify-center flex-1 bg-white text-black">
+      <div class="max-w-md text-center">
+        <img src="banner.svg" alt="banner" width="524.67004" height="531.39694" class="w-full">
+      </div>
+    </div>
+    <div class="w-full bg-gray-100 lg:w-1/2 flex items-center justify-center">
+      <div class="max-w-md w-full p-6">
+        <h1 class="text-3xl font-semibold mb-6 text-black text-center">Sign Up</h1>
+        <h1 class="text-sm font-semibold mb-6 text-gray-500 text-center">Join to Our Community with all time access and free</h1>
+        <div class="mt-4 flex flex-col lg:flex-row items-center justify-between">
+          <div class="w-full lg:w-1/2 mb-2 lg:mb-0">
+            <button type="button"
+              class="w-full flex justify-center items-center gap-2 bg-white text-sm text-gray-600 p-2 rounded-md hover:bg-gray-50 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-200 transition-colors duration-300">
+              <img src="google.svg" class="w-4">
+              Sign Up with Google</button>
           </div>
-          <div class=" grid-cols-2 flex group justify-between">
-            <div class="font-black flex flex-col">
-              <span class="text-yellow-500 text-xl">IMDB SCORE</span>
-              <span class="text-3xl flex gap-x-1 items-center group-hover:text-yellow-600 transition-all">
-                8.8
-                <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <g id="SVGRepo_bgCarrier" stroke-width="0" />
-                  <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" />
-                  <g id="SVGRepo_iconCarrier">
-                    <path
-                      d="M9.15316 5.40838C10.4198 3.13613 11.0531 2 12 2C12.9469 2 13.5802 3.13612 14.8468 5.40837L15.1745 5.99623C15.5345 6.64193 15.7144 6.96479 15.9951 7.17781C16.2757 7.39083 16.6251 7.4699 17.3241 7.62805L17.9605 7.77203C20.4201 8.32856 21.65 8.60682 21.9426 9.54773C22.2352 10.4886 21.3968 11.4691 19.7199 13.4299L19.2861 13.9372C18.8096 14.4944 18.5713 14.773 18.4641 15.1177C18.357 15.4624 18.393 15.8341 18.465 16.5776L18.5306 17.2544C18.7841 19.8706 18.9109 21.1787 18.1449 21.7602C17.3788 22.3417 16.2273 21.8115 13.9243 20.7512L13.3285 20.4768C12.6741 20.1755 12.3469 20.0248 12 20.0248C11.6531 20.0248 11.3259 20.1755 10.6715 20.4768L10.0757 20.7512C7.77268 21.8115 6.62118 22.3417 5.85515 21.7602C5.08912 21.1787 5.21588 19.8706 5.4694 17.2544L5.53498 16.5776C5.60703 15.8341 5.64305 15.4624 5.53586 15.1177C5.42868 14.773 5.19043 14.4944 4.71392 13.9372L4.2801 13.4299C2.60325 11.4691 1.76482 10.4886 2.05742 9.54773C2.35002 8.60682 3.57986 8.32856 6.03954 7.77203L6.67589 7.62805C7.37485 7.4699 7.72433 7.39083 8.00494 7.17781C8.28555 6.96479 8.46553 6.64194 8.82547 5.99623L9.15316 5.40838Z"
-                      fill="#eab308" />
-                  </g>
-                </svg>
-              </span>
-            </div>
-            <div class="flex flex-col items-end">
-              <div class="h-7"></div>
-              <span class="text-3xl  font-bold  gap-x-2 text-slate-300">
-                # 8
-              </span>
-            </div>
+          <div class="w-full lg:w-1/2 ml-0 lg:ml-2">
+            <button type="button"
+              class="w-full flex justify-center items-center gap-2 bg-white text-sm text-gray-600 p-2 rounded-md hover:bg-gray-50 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-200 transition-colors duration-300">
+              <img src="github.svg" class="w-4">
+              Sign Up with Github</button>
           </div>
+        </div>
+        <div class="mt-4 text-sm text-gray-600 text-center">
+          <p>or with email</p>
+        </div>
+        <form action="#" method="POST" class="space-y-4">
+          <div>
+            <label for="username" class="block text-sm font-medium text-gray-700">Username</label>
+            <input type="text" id="username" name="username"
+              class="mt-1 p-2 w-full border rounded-md focus:border-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300 transition-colors duration-300">
+          </div>
+          <div>
+            <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+            <input type="text" id="email" name="email"
+              class="mt-1 p-2 w-full border rounded-md focus:border-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300 transition-colors duration-300">
+          </div>
+          <div>
+            <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+            <input type="password" id="password" name="password"
+              class="mt-1 p-2 w-full border rounded-md focus:border-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300 transition-colors duration-300">
+          </div>
+          <div>
+            <button type="submit"
+              class="w-full bg-black text-white p-2 rounded-md hover:bg-gray-800 focus:outline-none focus:bg-black focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900 transition-colors duration-300">Sign
+              Up</button>
+          </div>
+        </form>
+        <div class="mt-4 text-sm text-gray-600 text-center">
+          <p>Already have an account? <a href="#" class="text-black hover:underline">Login here</a>
+          </p>
         </div>
       </div>
     </div>
+  </div>
 </body>
 
 </html>
