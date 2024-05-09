@@ -14,12 +14,16 @@
   <header class="bg-red-500 p-5 text-3xl font-bold text-white">BMI Calculator</header>
   <div class="flex items-center justify-center h-screen bg-[#ffffff]">
     <div class="p-5 flex flex-col justify-between items-center">
-      <h1>Height (cm)</h1>
-      <input type="text" id="heightInput" required class="border">
-      <h1>Weight (kg)</h1>
-      <input type="text" id="weightInput" required class="border">
-      <button onclick="calculateBMI()" class="bg-red-500 p-2 text-white rounded-lg font-bold">Calculate BMI</button>
-      <h1>Your BMI: <span id="outputText">0.0</span></h1>
+      <div class="my-2">
+        <h1>Height (cm)</h1>
+        <input type="text" id="heightInput" required class="border">
+      </div>
+      <div class="my-2">
+        <h1>Weight (kg)</h1>
+        <input type="text" id="weightInput" required class="border">
+      </div>
+      <button onclick="calculateBMI()" class="my-2 bg-red-500 p-2 text-white rounded-lg font-bold">Calculate BMI</button>
+      <h1 class="text-center">Your BMI: <span id="outputText">0.0</span></h1>
     </div>
   </div>
   <script>
