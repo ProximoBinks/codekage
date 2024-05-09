@@ -4,66 +4,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Counter</title>
+  <title></title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
   </style>
 </head>
-<!--
-  Output
-  increment positive or negative
-  incremental value
-  reset button
- -->
 
 <body>
-  <header class="bg-blue-500 p-5 text-center font-bold text-3xl text-white">Incremental Counter</header>
+
   <div class="flex items-center justify-center h-screen bg-[#ffffff]">
     <div class="p-5 flex flex-col justify-between items-center">
-      <h1 id="outputNumber" class="text-3xl font-bold">0</h1>
-      <div class="my-2">
-        <button onclick="decrease()" class="border h-10 w-10 text-2xl font-bold bg-blue-500 text-white rounded-lg">
-          <div class="mt-[-4px]">-</div>
-        </button>
-        <button onclick="increase()" class="border h-10 w-10 text-2xl font-bold bg-blue-500 text-white rounded-lg">
-          <div class="mt-[-4px]">+</div>
-        </button>
-      </div>
-      <div class="my-2">
-        <span class="font-[500]">Increment/Decrement by: </span>
-        <input id="incrementalValue" type="text" class="font-[500] border rounded-lg border-black max-w-[100px] px-2">
-      </div>
-      <button onclick="reset()" class="font-bold bg-blue-500 h-10 px-3 rounded-lg text-white">Reset</button>
+
     </div>
   </div>
-  <footer class="bg-gray-200 p-3 text-center font-bold">&copy; CodeKage 2024</footer>
   <script>
-    let count = 0;
-    let incValue = 0;
-    const outputNumber = document.getElementById('outputNumber');
-    function increase() {
-      getIncrement();
-      count += incValue;
-      outputNumber.textContent = count;
-    }
-    function decrease() {
-      getIncrement();
-      count -= incValue;
-      outputNumber.textContent = count;
-    }
-    function getIncrement() {
-      const incrementalValue = document.getElementById('incrementalValue').value;
-      if (incrementalValue !== '') {
-        incValue = parseInt(incrementalValue);
-      }
-    }
-    function reset() {
-      outputNumber.textContent = 0;
-      count = 0;
-      const incrementalValue = document.getElementById('incrementalValue');
-      incrementalValue.value = '';
-      incValue = 0;
-    }
+
   </script>
 </body>
 
