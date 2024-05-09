@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dice-Game</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+  <header class="bg-red-500 p-5 text-3xl text-white font-bold">Dice Game</header>
+  <div class="flex justify-center items-center h-screen">
+    <div class="bg-gray-200 flex flex-col justify-center items-center p-5 rounded-lg shadow">
+      <h1 id="winnerOutput" class="font-bold mb-5">Roll the die!</h1>
+      <div class="flex gap-5">
+        <!-- Player 1 Section -->
+        <div class="flex flex-col items-center justify-center">
+          <h1>Player 1</h1>
+          <div id="playerOneDice" class="grid grid-cols-3 bg-red-500 p-3 rounded-lg gap-1"></div>
+          <h1 id="output1">0</h1>
+        </div>
+        <!-- Player 2 Section -->
+        <div class="flex flex-col items-center justify-center">
+          <h1>Player 2</h1>
+          <div id="playerTwoDice" class="grid grid-cols-3 bg-red-500 p-3 rounded-lg gap-1"></div>
+          <h1 id="output2">0</h1>
+        </div>
+      </div>
+      <button onclick="roll()" class="bg-red-500 text-white py-1 px-2 rounded-lg font-bold mt-5">Play</button>
+    </div>
+  </div>
+  <script>
+    // Generate dice spots for both players
+    const createDiceHTML = (player) => {
+      let diceHTML = '';
+      for (let i = 1; i <= 9; i++) {
+        diceHTML += `<div id="${player}${i}" class="w-5 h-5 rounded-full"></div>`;
+      }
+      return diceHTML;
+    };
+    document.getElementById('playerOneDice').innerHTML = createDiceHTML('playerOne');
+    document.getElementById('playerTwoDice').innerHTML = createDiceHTML('playerTwo');
+
+    // Simplify DOM element fetching
+    const getElements = (prefix) => Array.from({ length: 9 }, (_, i) => document.getElementById(`${prefix}${i + 1}`));
+
+    const playerOneElements = getElements('playerOne');
+    const playerTwoElements = getElements('playerTwo');
+
+    function roll() {
+      const output = document.getElementById('winnerOutput');
+      const output1 = document.getElementById('output1');
+      const output2 = document.getElementById('output2');
+      let player1 = Math.floor(Math.random() * 6) + 1;
+      let player2 = Math.floor(Math.random() * 6) + 1;
+
+      // Update the dice display based on traditional dice faces
+      const dicePatterns = [
+        [4],                // Dice face 1
+        [0, 8],             // Dice face 2
+        [0, 4, 8],          // Dice face 3
+        [0, 2, 6, 8],       // Dice face 4
+        [0, 2, 4, 6, 8],    // Dice face 5
+        [0, 2, 3, 5, 6, 8]  // Dice face 6
+      ];
+
+      const updateDice = (elements, roll) => {
+        elements.forEach((element, index) => element.style.backgroundColor = dicePatterns[roll - 1].includes(index) ? 'white' : 'transparent');
+      };
+      updateDice(playerOneElements, player1);
+      updateDice(playerTwoElements, player2);
+
+      // Update scores and determine winner
+      output1.textContent = player1;
+      output2.textContent = player2;
+      output.textContent = player1 > player2 ? "Player 1 Wins!" : player2 > player1 ? "Player 2 Wins!" : "Draw!";
+    }
+  </script>
+</body>
+</html>

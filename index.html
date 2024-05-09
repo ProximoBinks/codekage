@@ -9,45 +9,214 @@
 </head>
 
 <body>
-  <header class="bg-blue-500 p-5 text-3xl text-white font-bold">Dice Game</header>
+  <header class="bg-purple-500 p-5 text-3xl text-white font-bold">Dice Game</header>
   <div class="flex justify-center items-center h-screen">
     <div class="bg-gray-200 flex flex-col justify-center items-center p-5 rounded-lg shadow">
-      <h1 id="winnerOutput" class="font-bold mb-5">Player 1 Wins!</h1>
+      <h1 id="winnerOutput" class="font-bold mb-5">Roll the die!</h1>
       <div class="flex gap-5">
         <div class="flex flex-col items-center justify-center">
           <h1>Player 1</h1>
-          <div class="grid grid-cols-3 bg-red-500 p-3 rounded-lg">
-            <div class="w-5 h-5 bg-white rounded-full"></div>
-            <div class="w-5 h-5 rounded-full"></div>
-            <div class="w-5 h-5 bg-white rounded-full"></div>
-            <div class="w-5 h-5 rounded-full"></div>
-            <div class="w-5 h-5 rounded-full"></div>
-            <div class="w-5 h-5 rounded-full"></div>
-            <div class="w-5 h-5 bg-white rounded-full"></div>
-            <div class="w-5 h-5 rounded-full"></div>
-            <div class="w-5 h-5 bg-white rounded-full"></div>
+          <div class="grid grid-cols-3 bg-purple-500 p-3 rounded-lg gap-1">
+            <div id="playerOne1" class="w-5 h-5 bg-white rounded-full"></div>
+            <div id="playerOne2" class="w-5 h-5 rounded-full"></div>
+            <div id="playerOne3" class="w-5 h-5 bg-white rounded-full"></div>
+            <div id="playerOne4" class="w-5 h-5 rounded-full"></div>
+            <div id="playerOne5" class="w-5 h-5 rounded-full"></div>
+            <div id="playerOne6" class="w-5 h-5 rounded-full"></div>
+            <div id="playerOne7" class="w-5 h-5 bg-white rounded-full"></div>
+            <div id="playerOne8" class="w-5 h-5 rounded-full"></div>
+            <div id="playerOne9" class="w-5 h-5 bg-white rounded-full"></div>
           </div>
+          <h1 id="output1">0</h1>
         </div>
         <div class="flex flex-col items-center justify-center">
           <h1>Player 2</h1>
-          <div class="grid grid-cols-3 bg-red-500 p-3 rounded-lg">
-            <div class="w-5 h-5 bg-white rounded-full"></div>
-            <div class="w-5 h-5 rounded-full"></div>
-            <div class="w-5 h-5 bg-white rounded-full"></div>
-            <div class="w-5 h-5 rounded-full"></div>
-            <div class="w-5 h-5 rounded-full"></div>
-            <div class="w-5 h-5 rounded-full"></div>
-            <div class="w-5 h-5 bg-white rounded-full"></div>
-            <div class="w-5 h-5 rounded-full"></div>
-            <div class="w-5 h-5 bg-white rounded-full"></div>
+          <div class="grid grid-cols-3 bg-purple-500 p-3 rounded-lg gap-1">
+            <div id="playerTwo1" class="w-5 h-5 bg-white rounded-full"></div>
+            <div id="playerTwo2" class="w-5 h-5 rounded-full"></div>
+            <div id="playerTwo3" class="w-5 h-5 bg-white rounded-full"></div>
+            <div id="playerTwo4" class="w-5 h-5 rounded-full"></div>
+            <div id="playerTwo5" class="w-5 h-5 rounded-full"></div>
+            <div id="playerTwo6" class="w-5 h-5 rounded-full"></div>
+            <div id="playerTwo7" class="w-5 h-5 bg-white rounded-full"></div>
+            <div id="playerTwo8" class="w-5 h-5 rounded-full"></div>
+            <div id="playerTwo9" class="w-5 h-5 bg-white rounded-full"></div>
           </div>
+          <h1 id="output2">0</h1>
         </div>
       </div>
-      <button onclick="roll()" class="bg-red-500 text-white py-1 px-2 rounded-lg font-bold mt-5">Play</button>
+      <button onclick="roll()" class="bg-purple-500 text-white py-1 px-2 rounded-lg font-bold mt-5">Play</button>
     </div>
   </div>
   <script>
-
+    const playerOne1 = document.getElementById('playerOne1');
+    const playerOne2 = document.getElementById('playerOne2');
+    const playerOne3 = document.getElementById('playerOne3');
+    const playerOne4 = document.getElementById('playerOne4');
+    const playerOne5 = document.getElementById('playerOne5');
+    const playerOne6 = document.getElementById('playerOne6');
+    const playerOne7 = document.getElementById('playerOne7');
+    const playerOne8 = document.getElementById('playerOne8');
+    const playerOne9 = document.getElementById('playerOne9');
+    const playerTwo1 = document.getElementById('playerTwo1');
+    const playerTwo2 = document.getElementById('playerTwo2');
+    const playerTwo3 = document.getElementById('playerTwo3');
+    const playerTwo4 = document.getElementById('playerTwo4');
+    const playerTwo5 = document.getElementById('playerTwo5');
+    const playerTwo6 = document.getElementById('playerTwo6');
+    const playerTwo7 = document.getElementById('playerTwo7');
+    const playerTwo8 = document.getElementById('playerTwo8');
+    const playerTwo9 = document.getElementById('playerTwo9');
+    function roll() {
+      const output = document.getElementById('winnerOutput');
+      const output1 = document.getElementById('output1');
+      const output2 = document.getElementById('output2');
+      let player1 = Math.floor(Math.random() * 6) + 1;
+      let player2 = Math.floor(Math.random() * 6) + 1;
+      output1.textContent = player1;
+      output2.textContent = player2;
+      if (player1 === 1) {
+        playerOne1.classList.remove('bg-white');
+        playerOne2.classList.remove('bg-white');
+        playerOne3.classList.remove('bg-white');
+        playerOne4.classList.remove('bg-white');
+        playerOne5.classList.add('bg-white');
+        playerOne6.classList.remove('bg-white');
+        playerOne7.classList.remove('bg-white');
+        playerOne8.classList.remove('bg-white');
+        playerOne9.classList.remove('bg-white');
+      }
+      if (player1 === 2) {
+        playerOne1.classList.remove('bg-white');
+        playerOne2.classList.remove('bg-white');
+        playerOne3.classList.add('bg-white');
+        playerOne4.classList.remove('bg-white');
+        playerOne5.classList.remove('bg-white');
+        playerOne6.classList.remove('bg-white');
+        playerOne7.classList.add('bg-white');
+        playerOne8.classList.remove('bg-white');
+        playerOne9.classList.remove('bg-white');
+      }
+      if (player1 === 3) {
+        playerOne1.classList.remove('bg-white');
+        playerOne2.classList.remove('bg-white');
+        playerOne3.classList.add('bg-white');
+        playerOne4.classList.remove('bg-white');
+        playerOne5.classList.add('bg-white');
+        playerOne6.classList.remove('bg-white');
+        playerOne7.classList.add('bg-white');
+        playerOne8.classList.remove('bg-white');
+        playerOne9.classList.remove('bg-white');
+      }
+      if (player1 === 4) {
+        playerOne1.classList.add('bg-white');
+        playerOne2.classList.remove('bg-white');
+        playerOne3.classList.add('bg-white');
+        playerOne4.classList.remove('bg-white');
+        playerOne5.classList.remove('bg-white');
+        playerOne6.classList.remove('bg-white');
+        playerOne7.classList.add('bg-white');
+        playerOne8.classList.remove('bg-white');
+        playerOne9.classList.add('bg-white');
+      }
+      if (player1 === 5) {
+        playerOne1.classList.add('bg-white');
+        playerOne2.classList.remove('bg-white');
+        playerOne3.classList.add('bg-white');
+        playerOne4.classList.remove('bg-white');
+        playerOne5.classList.add('bg-white');
+        playerOne6.classList.remove('bg-white');
+        playerOne7.classList.add('bg-white');
+        playerOne8.classList.remove('bg-white');
+        playerOne9.classList.add('bg-white');
+      }
+      if (player1 === 6) {
+        playerOne1.classList.add('bg-white');
+        playerOne2.classList.remove('bg-white');
+        playerOne3.classList.add('bg-white');
+        playerOne4.classList.add('bg-white');
+        playerOne5.classList.remove('bg-white');
+        playerOne6.classList.add('bg-white');
+        playerOne7.classList.add('bg-white');
+        playerOne8.classList.remove('bg-white');
+        playerOne9.classList.add('bg-white');
+      }
+      if (player2 === 1) {
+        playerTwo1.classList.remove('bg-white');
+        playerTwo2.classList.remove('bg-white');
+        playerTwo3.classList.remove('bg-white');
+        playerTwo4.classList.remove('bg-white');
+        playerTwo5.classList.add('bg-white');
+        playerTwo6.classList.remove('bg-white');
+        playerTwo7.classList.remove('bg-white');
+        playerTwo8.classList.remove('bg-white');
+        playerTwo9.classList.remove('bg-white');
+      }
+      if (player2 === 2) {
+        playerTwo1.classList.remove('bg-white');
+        playerTwo2.classList.remove('bg-white');
+        playerTwo3.classList.add('bg-white');
+        playerTwo4.classList.remove('bg-white');
+        playerTwo5.classList.remove('bg-white');
+        playerTwo6.classList.remove('bg-white');
+        playerTwo7.classList.add('bg-white');
+        playerTwo8.classList.remove('bg-white');
+        playerTwo9.classList.remove('bg-white');
+      }
+      if (player2 === 3) {
+        playerTwo1.classList.remove('bg-white');
+        playerTwo2.classList.remove('bg-white');
+        playerTwo3.classList.add('bg-white');
+        playerTwo4.classList.remove('bg-white');
+        playerTwo5.classList.add('bg-white');
+        playerTwo6.classList.remove('bg-white');
+        playerTwo7.classList.add('bg-white');
+        playerTwo8.classList.remove('bg-white');
+        playerTwo9.classList.remove('bg-white');
+      }
+      if (player2 === 4) {
+        playerTwo1.classList.add('bg-white');
+        playerTwo2.classList.remove('bg-white');
+        playerTwo3.classList.add('bg-white');
+        playerTwo4.classList.remove('bg-white');
+        playerTwo5.classList.remove('bg-white');
+        playerTwo6.classList.remove('bg-white');
+        playerTwo7.classList.add('bg-white');
+        playerTwo8.classList.remove('bg-white');
+        playerTwo9.classList.add('bg-white');
+      }
+      if (player2 === 5) {
+        playerTwo1.classList.add('bg-white');
+        playerTwo2.classList.remove('bg-white');
+        playerTwo3.classList.add('bg-white');
+        playerTwo4.classList.remove('bg-white');
+        playerTwo5.classList.add('bg-white');
+        playerTwo6.classList.remove('bg-white');
+        playerTwo7.classList.add('bg-white');
+        playerTwo8.classList.remove('bg-white');
+        playerTwo9.classList.add('bg-white');
+      }
+      if (player2 === 6) {
+        playerTwo1.classList.add('bg-white');
+        playerTwo2.classList.remove('bg-white');
+        playerTwo3.classList.add('bg-white');
+        playerTwo4.classList.add('bg-white');
+        playerTwo5.classList.remove('bg-white');
+        playerTwo6.classList.add('bg-white');
+        playerTwo7.classList.add('bg-white');
+        playerTwo8.classList.remove('bg-white');
+        playerTwo9.classList.add('bg-white');
+      }
+      if (player1 > player2) {
+        output.textContent = "Player 1 Wins!";
+      }
+      if (player2 > player1) {
+        output.textContent = "Player 2 Wins!";
+      }
+      if (player2 === player1) {
+        output.textContent = "Draw!";
+      }
+    }
   </script>
 </body>
 
