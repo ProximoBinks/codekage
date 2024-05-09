@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title></title>
+  <title>BMI Calculator</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
   </style>
@@ -19,20 +19,44 @@
       <h1>Weight (kg)</h1>
       <input type="text" id="weightInput" required class="border">
       <button onclick="calculateBMI()" class="bg-red-500 p-2 text-white rounded-lg font-bold">Calculate BMI</button>
-      <h1>Your BMI: <span id="outputText">25.0</span></h1>
+      <h1>Your BMI: <span id="outputText">0.0</span></h1>
     </div>
   </div>
   <script>
-    let bmi = 0;
-    function calculateBMI(){
-      const height = document.getElementsById('heightInput').value;
-      const weight = document.getElementsById('weightInput').value;
+    let track = 0;
+    function calculateBMI() {
+      const height = document.getElementById('heightInput').value;
+      const weight = document.getElementById('weightInput').value;
       const output = document.getElementById('outputText');
-      if(height!==''&&weight!==''){
-        bmi = 3;
-        output.textContent=bmi;
+      const error = document.createElement('h1');
+      error.textContent = "Please fill out both fields.";
+      error.classList.add('text-red-500');
+      if (height !== '' && weight !== '') {
+        const heightInMeters = parseInt(height) / 100;
+        const bmi = weight / (heightInMeters * heightInMeters);
+        output.textContent = bmi.toFixed(2);
+        error.remove();
+        track = 0;
+      }
+      else {
+        track++;
+        if (track <= 1) {
+          output.textContent='0.0';
+          output.appendChild(error);
+        }
       }
     }
+
+    document.getElementById('heightInput').addEventListener("keydown", (event) => {
+      if(event.key=="Enter"){
+        calculateBMI();
+      }
+    })
+    document.getElementById('weightInput').addEventListener("keydown", (lol) => {
+      if(lol.key=="Enter"){
+        calculateBMI();
+      }
+    })
   </script>
 </body>
 
