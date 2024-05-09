@@ -4,63 +4,50 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BMI Calculator</title>
+  <title>Dice-Game</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-  </style>
 </head>
 
 <body>
-  <header class="bg-red-500 p-5 text-3xl font-bold text-white">BMI Calculator</header>
-  <div class="flex items-center justify-center h-screen bg-[#ffffff]">
-    <div class="p-5 flex flex-col justify-between items-center">
-      <div class="my-2">
-        <h1>Height (cm)</h1>
-        <input type="text" id="heightInput" required class="border">
+  <header class="bg-blue-500 p-5 text-3xl text-white font-bold">Dice Game</header>
+  <div class="flex justify-center items-center h-screen">
+    <div class="bg-gray-200 flex flex-col justify-center items-center p-5 rounded-lg shadow">
+      <h1 id="winnerOutput" class="font-bold mb-5">Player 1 Wins!</h1>
+      <div class="flex gap-5">
+        <div class="flex flex-col items-center justify-center">
+          <h1>Player 1</h1>
+          <div class="grid grid-cols-3 bg-red-500 p-3 rounded-lg">
+            <div class="w-5 h-5 bg-white rounded-full"></div>
+            <div class="w-5 h-5 rounded-full"></div>
+            <div class="w-5 h-5 bg-white rounded-full"></div>
+            <div class="w-5 h-5 rounded-full"></div>
+            <div class="w-5 h-5 rounded-full"></div>
+            <div class="w-5 h-5 rounded-full"></div>
+            <div class="w-5 h-5 bg-white rounded-full"></div>
+            <div class="w-5 h-5 rounded-full"></div>
+            <div class="w-5 h-5 bg-white rounded-full"></div>
+          </div>
+        </div>
+        <div class="flex flex-col items-center justify-center">
+          <h1>Player 2</h1>
+          <div class="grid grid-cols-3 bg-red-500 p-3 rounded-lg">
+            <div class="w-5 h-5 bg-white rounded-full"></div>
+            <div class="w-5 h-5 rounded-full"></div>
+            <div class="w-5 h-5 bg-white rounded-full"></div>
+            <div class="w-5 h-5 rounded-full"></div>
+            <div class="w-5 h-5 rounded-full"></div>
+            <div class="w-5 h-5 rounded-full"></div>
+            <div class="w-5 h-5 bg-white rounded-full"></div>
+            <div class="w-5 h-5 rounded-full"></div>
+            <div class="w-5 h-5 bg-white rounded-full"></div>
+          </div>
+        </div>
       </div>
-      <div class="my-2">
-        <h1>Weight (kg)</h1>
-        <input type="text" id="weightInput" required class="border">
-      </div>
-      <button onclick="calculateBMI()" class="my-2 bg-red-500 p-2 text-white rounded-lg font-bold">Calculate BMI</button>
-      <h1 class="text-center">Your BMI: <span id="outputText">0.0</span></h1>
+      <button onclick="roll()" class="bg-red-500 text-white py-1 px-2 rounded-lg font-bold mt-5">Play</button>
     </div>
   </div>
   <script>
-    let track = 0;
-    function calculateBMI() {
-      const height = document.getElementById('heightInput').value;
-      const weight = document.getElementById('weightInput').value;
-      const output = document.getElementById('outputText');
-      const error = document.createElement('h1');
-      error.textContent = "Please fill out both fields.";
-      error.classList.add('text-red-500');
-      if (height !== '' && weight !== '') {
-        const heightInMeters = parseInt(height) / 100;
-        const bmi = weight / (heightInMeters * heightInMeters);
-        output.textContent = bmi.toFixed(2);
-        error.remove();
-        track = 0;
-      }
-      else {
-        track++;
-        if (track <= 1) {
-          output.textContent='0.0';
-          output.appendChild(error);
-        }
-      }
-    }
 
-    document.getElementById('heightInput').addEventListener("keydown", (event) => {
-      if(event.key=="Enter"){
-        calculateBMI();
-      }
-    })
-    document.getElementById('weightInput').addEventListener("keydown", (lol) => {
-      if(lol.key=="Enter"){
-        calculateBMI();
-      }
-    })
   </script>
 </body>
 
