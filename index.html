@@ -1,19 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Title</title>
+  <title>Document</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-  </style>
 </head>
-
 <body>
-  <div class="flex items-center justify-center h-screen bg-[#ffffff]">
-    
+  <header class="bg text-center p-4 text-2xl font-bold border-b border-b-2 bg-[#f9fafb]">
+    Guess the number
+  </header>
+  <div class="flex flex-col items-center  h-screen">
+    <div class="mt-4">
+      <h1>Enter a guess between 0 and 100</h1>
+      <input id="guess" type="number" min="0" max="100" class="w-full mt-4 border px-2 border-black" placeholder="Enter a number">
+    </div>
+    <div class="mt-4 flex justify-center gap-2">
+      <button onclick="makeGuess()" class="bg-gray-200 border border-black rounded-lg py-1 px-2">Submit</button>
+      <button class="border border-black rounded-lg bg-[#00ffff] py-1 px-2">Start Game</button>
+    </div>
+    <div id="resultBox" class="mt-4 text-center hidden">
+      <h1>Too low!</h1>
+      <h1>Your guesses: <span id="guess">0</span></h1>
+    </div>
   </div>
-</body>
+  <script>
+    function makeGuess(){
+      randomInt();
+      const resultBox = document.getElementById('resultBox');
+      const guess = document.getElementById('guess').value;
+      if(guess!==''){
 
+        resultBox.classList.remove('hidden');
+      }
+    }
+    function randomInt(){
+      console.log(Math.floor(Math.random()*100));
+    }
+  </script>
+</body>
 </html>
