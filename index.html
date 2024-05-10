@@ -26,16 +26,17 @@
   </div>
   <script>
     function makeGuess(){
-      randomInt();
+      const randInt = randomInt();
       const resultBox = document.getElementById('resultBox');
       const guess = document.getElementById('guess').value;
       if(guess!==''){
-
+        //if < = etc
         resultBox.classList.remove('hidden');
       }
     }
     function randomInt(){
-      console.log(Math.floor(Math.random()*100));
+      const num = (Math.floor(Math.random()*100));
+      return num;
     }
   </script>
 </body>
